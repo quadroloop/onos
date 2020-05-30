@@ -8,4 +8,24 @@
     margin-top: 20px;
     // margin: 0px;
   }
+
+  .card-img-top{
+    height: 200px;
+    object-fit: cover;
+  }
+
+
+
+
+
+}
+
+
+.card-profile-image img {
+  max-width: 120px;
+  border-radius: .5rem;
+  transform: translate(-50%,-30%);
+  position: absolute;
+  left: 50%;
+  transition: all .15s ease;
 }
