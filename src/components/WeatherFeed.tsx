@@ -64,7 +64,7 @@ const WeatherFeed = (props) => {
   })
 
   return (
-    <div className="card-thread">
+    <div className="card-thread draggable">
       <AlertCard />
       {
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5].map(x => {
