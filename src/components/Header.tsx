@@ -23,6 +23,14 @@ const Header = (props) => {
       }
     }
 
+    if (layer === "satellite") {
+      if (layers.includes(layer)) {
+        document.getElementById('weather-map').style.display = 'none'
+      } else {
+        document.getElementById('weather-map').style.display = 'flex'
+      }
+    }
+
 
   }
 

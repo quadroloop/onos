@@ -4,7 +4,7 @@ import { MapInteractionCSS } from 'react-map-interaction';
 
 const WeatherMap = (props) => {
   return (
-    <div className={`weather-map ${props.layers.length > 1 ? "overlay-map" : ""}`}>
+    <div id="weather-map" className={`weather-map ${props.layers.length > 1 ? "overlay-map" : ""}`}>
 
       <div className="sat-gif-container">
         <MapInteractionCSS

@@ -9,7 +9,6 @@ mapboxgl.accessToken = mapbox_key;
 
 const Map = (props) => {
 
-
   useEffect(() => {
 
     if (!localStorage.originLocation) {

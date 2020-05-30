@@ -65,9 +65,9 @@ const Responder = () => {
     <>
       <Header layers={layers} setLayers={setLayers} />
 
-      {layers.includes('satellite') && (
-        <WeatherMap layers={layers} />
-      )}
+
+      <WeatherMap layers={layers} />
+
 
       {covidMap && (
         <Map layers={layers} covidMap={covidMap} />
