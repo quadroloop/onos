@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/argond.css'
+import './styles/index.scss'
+import './styles/Panel.scss'
+import 'react-circular-progressbar/dist/styles.css';
+import './styles/responsive.scss'
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

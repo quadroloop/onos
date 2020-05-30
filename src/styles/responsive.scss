@@ -1,0 +1,21 @@
+
+
+@media(max-width: 700px){
+  .nav-group{
+    span{
+      i{
+       font-size: 20px;
+      }
+      margin-right: 0px !important;
+      strong{
+        display: none;
+      }
+    }
+  }
+
+  .panel-nav-items{
+    .x-item{
+    display: none !important ;
+    }
+  }
+}

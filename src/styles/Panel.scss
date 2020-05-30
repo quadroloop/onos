@@ -1,0 +1,149 @@
+
+
+.panel-container{
+  position: fixed;
+  z-index: 99999999999;
+  background: #fff;
+  height: 220px;
+  width: 100%;
+  bottom: 0px;
+  border-radius: 10px 10px 0px 0px;
+  transition: 0.2s;
+  box-shadow: 0px -2px 16px 3px rgba(0,0,0,0.25);
+
+
+  &.wide-true{
+    height: 80vh;
+    transition: 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  .panel-header{
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+
+    .panel-nav-items{
+      display: flex;
+      justify-content: space-evenly;
+      span{
+        margin-right: 10px;
+        padding: 0px 10px;
+        border-bottom: 2px transparent;
+        margin-bottom: -8px;
+        color: rgb(156, 156, 156);
+        cursor: pointer;
+
+        &.active{
+          color: rgb(81, 130, 221);
+          border-bottom: 2px solid rgb(81, 130, 221);
+          cursor:  default;
+        }
+
+        i{
+          font-size: 25px;
+          position: relative;
+          bottom: -1px;
+          transition: 0.3s;
+          border-radius: 15px;
+
+          &:hover{
+          transition: 0.3s;
+          background: #333;
+          color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-thread{
+  width: 100%;
+  overflow: hidden;
+  height: 190px;
+  white-space: nowrap;
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.info-card{
+  background: #fff;
+  min-width: 170px;
+  // border: 1px solid #ddd;
+  height: 140px;
+  padding: 1px 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+
+.info-header{
+  padding: 1px;
+  border-bottom: 2px #333 !important;
+  width: 100%;
+  text-align: center;
+
+
+  small{
+    font-weight: 900;
+    font-size: 11px;
+  }
+}
+
+}
+
+
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: url(#xPath) !important;
+}
+
+
+.hazard-card{
+  min-width: 290px !important;
+  padding: 0px;
+  display: flex;
+
+  box-shadow: 0 5px 10px rgba(211, 84, 34, 0.301), 0 15px 40px rgba(128, 25, 12, 0.205);
+
+
+  .hazard-row{
+    display: flex !important;
+  flex-direction: row !important;
+  }
+
+  .hazard-icon{
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(rgba(194, 47, 47, 0.842),rgba(37, 4, 4, 0.425)), url('../assets/mapx.png');
+    background-size: contain;
+    display: grid;
+    border-radius: 5px 0px 0px 5px;
+
+    i{
+      color: #fff;
+      margin: auto;
+      font-size: 60px;
+    }
+  }
+
+  .hazard-details{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+
+     .type{
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .hazard-name{
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
