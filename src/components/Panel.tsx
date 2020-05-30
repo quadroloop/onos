@@ -7,7 +7,7 @@ import EvacuationAreas from './EvacuationAreas';
 const Panel = (props) => {
 
 
-  const [isWide, setWide] = useState(false)
+  const [isWide, setWide] = useState(true)
   const [tab, setTab] = useState("weather")
 
 
@@ -22,21 +22,33 @@ const Panel = (props) => {
         <span><i className="la la-layer-group mr-1" style={{ fontSize: '25px', bottom: '-3px', position: 'relative' }} /> Dashboard</span>
 
         <div className="panel-nav-items">
-          <span className={`x-item ${tab === "weather" ? "active" : ""}`} onClick={() => { setTab('weather') }}>Weather Info</span>
-          <span className={`x-item ${tab === "evacuation" ? "active" : ""}`} onClick={() => { setTab('evacuation') }}>Evacuation Areas</span>
+          <span className={`x-item ${tab === "weather" ? "active" : ""}`} onClick={() => { setTab('weather') }}> <i className="la la-wind mr-1" /> <strong>Weather Info</strong></span>
+          <span className={`x-item ${tab === "evacuation" ? "active" : ""}`} onClick={() => { setTab('evacuation') }}><i className="la la-home mr-1" />
+            <strong>
+              Evacuation Areas
+          </strong>
+          </span>
           <span onClick={togglePanel} className="mr-0 pr-0">
-            <i className={`la la-${isWide ? "chevron-circle-down" : "chevron-circle-up"}`} />
+            <i className={`expand la la-${isWide ? "chevron-circle-down" : "chevron-circle-up"}`} />
           </span>
         </div>
       </div >
 
-      {tab === "weather" && (
-        <WeatherFeed />
-      )}
+      <div className="panel-body">
 
-      {tab === "evacuation" && (
-        <EvacuationAreas />
-      )}
+
+
+        {tab === "weather" && (
+          <WeatherFeed />
+        )}
+
+        {tab === "evacuation" && (
+          <EvacuationAreas />
+        )}
+
+
+
+      </div>
 
     </div >
   )

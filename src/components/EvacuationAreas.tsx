@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import AreaCard from './AreaCard';
+import SegmentLoader from './SegmentLoader';
 
 
 
@@ -54,11 +55,7 @@ const EvacuationAreas = (props) => {
           }
         </>
       ) : (
-          <div className="segment-loader">
-            <div className="loader">
-              <div className="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            </div>
-          </div>
+          <SegmentLoader />
         )
       }
 

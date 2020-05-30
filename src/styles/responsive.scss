@@ -3,7 +3,7 @@
 @media(max-width: 700px){
   .nav-group{
     span{
-      i{
+      .expand{
        font-size: 20px;
       }
       margin-right: 0px !important;
@@ -15,7 +15,9 @@
 
   .panel-nav-items{
     .x-item{
+      strong{
     display: none !important ;
+      }
     }
   }
 }
