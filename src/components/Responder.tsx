@@ -3,6 +3,7 @@ import Panel from './Panel';
 import Header from './Header';
 import WeatherMap from './WeatherMap';
 import Map from './Map';
+import nprogress from 'nprogress'
 
 const Responder = () => {
 
@@ -41,7 +42,7 @@ const Responder = () => {
   }
 
   useEffect(() => {
-
+    nprogress.start()
     fetch("/dataset/cases.json")
       .then(res => {
         return res.json()
@@ -57,6 +58,7 @@ const Responder = () => {
         })
         console.log(parseData)
         createCovidMap(parseData)
+        nprogress.done()
       })
 
   }, [])
@@ -67,7 +69,6 @@ const Responder = () => {
 
 
       <WeatherMap layers={layers} />
-
 
       {covidMap && (
         <Map layers={layers} covidMap={covidMap} />

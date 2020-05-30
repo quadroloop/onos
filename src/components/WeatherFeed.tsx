@@ -39,9 +39,11 @@ const RainWidget = data => {
           idCSS="xPath"
         />
       </div>
-      <small>
-        Chance of rain
+      <div className="d-flex justify-content-center pt-1">
+        <small>
+          Chance of rain
        </small>
+      </div>
     </div>
   )
 }

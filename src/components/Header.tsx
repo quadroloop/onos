@@ -27,7 +27,7 @@ const Header = (props) => {
       if (layers.includes(layer)) {
         document.getElementById('weather-map').style.display = 'none'
       } else {
-        document.getElementById('weather-map').style.display = 'flex'
+        document.getElementById('weather-map').style.display = 'grid'
       }
     }
 
