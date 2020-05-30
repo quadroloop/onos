@@ -115,8 +115,8 @@
   .hazard-icon{
     height: 100%;
     width: 150px;
-    background: linear-gradient(rgba(194, 47, 47, 0.842),rgba(37, 4, 4, 0.425)), url('../assets/mapx.png');
-    background-size: contain;
+    background: linear-gradient(rgba(194, 47, 47, 0.842),rgba(37, 4, 4, 0.425)), url('../assets/mapx.png') no-repeat;
+    background-size: cover;
     display: grid;
     border-radius: 5px 0px 0px 5px;
 
@@ -146,4 +146,38 @@
       text-transform: uppercase;
     }
   }
+}
+
+.area-card{
+  box-shadow: 0 5px 10px rgba(96, 235, 168, 0.301), 0 15px 40px rgba(27, 58, 50, 0.205);
+  min-width: 420px !important;
+
+.hazard-icon{
+  background: linear-gradient(rgba(71, 180, 138, 0.671),rgba(8, 94, 109, 0.74)), url('../assets/evac.jpg') no-repeat;
+  background-size: cover;
+}
+
+.hazard-details{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 20px;
+  width: 100%;
+
+   .type{
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .hazard-name{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 19px;
+    white-space: normal;
+  }
+}
+
+
 }

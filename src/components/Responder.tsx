@@ -36,7 +36,6 @@ const Responder = () => {
     });
 
     setCovidMap(collection)
-
     console.log(collection)
 
   }
