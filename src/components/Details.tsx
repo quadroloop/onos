@@ -43,7 +43,7 @@ const Details = (props) => {
                     </h5>
                     <div className="h5 font-weight-300">
                       <br />
-                      <i className="ni location_pin mr-2" />Bucharest, Romania
+                      Manila, Philippines
                     </div>
                     <div className="h5 mt-4">
                       Lorem Ipsum Dolor simet
