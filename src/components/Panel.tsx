@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import WeatherFeed from './WeatherFeed';
 import EvacuationAreas from './EvacuationAreas';
+import Details from './Details';
 
 
 
@@ -45,6 +46,9 @@ const Panel = (props) => {
         {tab === "evacuation" && (
           <EvacuationAreas />
         )}
+
+
+        <Details />
 
 
 

@@ -4,6 +4,7 @@ import './styles/argond.css'
 import './styles/index.scss'
 import './styles/Panel.scss'
 import 'react-circular-progressbar/dist/styles.css';
+import './styles/Details.scss'
 import './styles/responsive.scss'
 
 import App from './App';

@@ -1,5 +1,6 @@
 body{
   background-color: #000;
+  // background-color: #fff;
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -112,7 +113,7 @@ div::-webkit-scrollbar-thumb
   position: absolute;
   width: 100%;
   z-index: 9;
-  opacity: 0.3;
+  opacity: 0.7;
 
   // &.overlay-map{
   //   opacity: 0.3;

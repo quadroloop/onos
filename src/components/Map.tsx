@@ -28,6 +28,7 @@ const Map = (props) => {
     const map = new mapboxgl.Map({
       container: document.getElementById("map"),
       style: 'mapbox://styles/bryce06/ck6ui8pey276f1imq6n2cc54s',
+      // style: 'mapbox://styles/bryce06/ck5w2nl700lyp1ip79hnktdrr',
       center: [currentLocation.long, currentLocation.lat],
       zoom: 13
     })
