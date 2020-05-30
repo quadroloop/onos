@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AreaCard = () => {
+const AreaCard = (props) => {
   return (
-    <div className="info-card hazard-card area-card">
+    <div className={`info-card hazard-card area-card fade-in`}>
       <div className="hazard-row">
 
         <div className="hazard-icon">
@@ -10,12 +10,13 @@ const AreaCard = () => {
         </div>
 
         <div className="hazard-details">
-          <span className="type">SCHOOL</span>
-          <p className="hazard-name">
-            Rivera Village Elementary asdasdklasdkasd
-          </p>
-          <small className="text-muted">1km Away</small>
+          <span className="type">{props.data.types[0].split("_").join(" ")}</span>
+          <span className="hazard-name">
+            {props.data.name}
+          </span>
+          {/* <small className="text-muted">1km Away</small> */}
         </div>
+
 
       </div>
     </div>

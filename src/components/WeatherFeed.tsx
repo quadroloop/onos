@@ -25,7 +25,7 @@ const GradientSVG = (props) => {
 
 const RainWidget = data => {
   return (
-    <div className="info-card shadow1 animated fadeIn" onClick={() => { alert('yes') }}>
+    <div className="info-card shadow1 fade-in" onClick={() => { alert('yes') }}>
       <div className="info-header">
         <small>{data.city}</small>
       </div>
@@ -66,7 +66,6 @@ const WeatherFeed = (props) => {
 
   return (
     <div className="card-thread draggable">
-      <AreaCard />
       <AlertCard />
       {
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5].map((x, index) => {
