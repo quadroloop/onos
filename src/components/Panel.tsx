@@ -7,6 +7,8 @@ const Panel = (props) => {
 
 
   const [isWide, setWide] = useState(false)
+  const [tab, setTab] = useState("weather")
+
 
   const togglePanel = () => {
     setWide(!isWide)
@@ -27,7 +29,13 @@ const Panel = (props) => {
         </div>
       </div >
 
-      <WeatherFeed />
+      {tab === "weather" && (
+        <WeatherFeed />
+      )}
+
+      {tab === "evacuation" && (
+        <h1>Evacuation Areas</h1>
+      )}
 
     </div >
   )

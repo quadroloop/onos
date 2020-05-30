@@ -329,8 +329,6 @@ const Map = (props) => {
       map.addImage('green-dot', greenDot, { pixelRatio: 3.5 });
       map.addImage('alert-dot', alertDot, { pixelRatio: 2 });
 
-
-
       // try to add map layer
       map.addLayer({
         'id': 'points',
