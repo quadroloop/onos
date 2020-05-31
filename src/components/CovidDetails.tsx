@@ -1,8 +1,9 @@
 import React from 'react'
 
-const CovidDetails = () => {
+const CovidDetails = (props) => {
 
 
+  console.log("covid data", props.ccovidData)
 
   return (
     <div className="card shadow1 border-none mb-3">
