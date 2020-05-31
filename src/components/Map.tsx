@@ -157,6 +157,7 @@ const Map = (props) => {
 
     map.on('click', (e) => {
       let ncoords = { lat: e.lngLat.wrap().lat, long: e.lngLat.wrap().lng }
+      localStorage.dtype = "coordinates"
       localStorage.currentLocation = JSON.stringify(ncoords)
     })
 

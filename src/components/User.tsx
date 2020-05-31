@@ -52,7 +52,7 @@ const User = (props) => {
   }, [])
 
   const newAccount = () => {
-    localStorage.clear();
+    localStorage.removeItem('userInfo')
     window.location.reload()
   }
 

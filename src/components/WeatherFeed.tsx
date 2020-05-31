@@ -28,6 +28,10 @@ const goTo = (data) => {
   }
 
   localStorage.currentLocation = JSON.stringify(newCoords)
+  localStorage.dtype = "weather"
+
+  document.getElementById('genDetails').click()
+
 }
 
 
