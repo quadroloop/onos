@@ -28,6 +28,9 @@ const goTo = (data) => {
   }
 
   localStorage.currentLocation = JSON.stringify(newCoords)
+
+  document.getElementById('genDetails').click()
+
 }
 
 

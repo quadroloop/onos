@@ -35,7 +35,7 @@ const Panel = (props) => {
               Incidents
           </strong>
           </span>
-          <span onClick={togglePanel} className="mr-0 pr-0">
+          <span onClick={togglePanel} className="mr-0 pr-0" id="genDetails">
             <i className={`expand la la-${isWide ? "chevron-circle-down" : "chevron-circle-up"}`} />
           </span>
         </div>
