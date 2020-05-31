@@ -4,6 +4,7 @@ import Header from './Header';
 import WeatherMap from './WeatherMap';
 import Map from './Map';
 import nprogress from 'nprogress'
+import Axios from 'axios';
 
 const Responder = () => {
 
@@ -56,24 +57,24 @@ const Responder = () => {
     }
 
 
-    // nprogress.start()
-    // fetch("/dataset/cases.json")
-    //   .then(res => {
-    //     return res.json()
-    //   })
-    //   .then(x => {
-    //     console.log(x.length)
-    //     let processedItems = []
-    //     let parseData = x.filter(x => {
-    //       if (!processedItems.includes(x.id) && x.north_coord !== "" && x.east_coord !== "") {
-    //         processedItems.push(x.id)
-    //         return x
-    //       }
-    //     })
-    //     console.log(parseData)
-    //     createCovidMap(parseData)
-    //     nprogress.done()
-    //   })
+    nprogress.start()
+
+
+    Axios.get('/dataset/cases.json')
+      .then(res => {
+        console.log(res.data.length)
+        let processedItems = []
+        let parseData = res.data.filter(x => {
+          if (!processedItems.includes(x.id) && x.north_coord !== "" && x.east_coord !== "") {
+            processedItems.push(x.id)
+            return x
+          }
+        })
+        console.log(parseData)
+        createCovidMap(parseData)
+        nprogress.done()
+        console.log(res.data)
+      })
 
   }, [])
 
@@ -84,10 +85,10 @@ const Responder = () => {
 
       <WeatherMap layers={layers} />
 
-      {covidMap && (
+      {/* {covidMap && (
         <Map layers={layers} covidMap={covidMap} />
       )}
-
+ */}
 
       <div>
         <Panel />

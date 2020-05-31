@@ -58,7 +58,7 @@ const Panel = (props) => {
         )}
 
 
-        <Details />
+        <Details {...props} />
 
 
 
