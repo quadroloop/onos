@@ -2,8 +2,21 @@ import React, { useEffect, useState } from 'react'
 import img_placeholder from '../assets/mapb.png'
 import logo from '../assets/onos_mast.svg'
 import { guid } from './Utilities';
-import { userInfo } from 'os';
+import nprogress from 'nprogress'
+import swal from 'sweetalert2'
 
+
+const PinBanner = () => {
+  return (
+    <div className="pin-banner">
+      <img src="./img/pin-banner.gif" />
+      <div className="content-block text-center">
+        <span>
+          Please provide your location to learn more about risk points near you, or to be able to send incident reports and call for help.</span>
+      </div>
+    </div>
+  )
+}
 
 
 const User = (props) => {
@@ -11,6 +24,8 @@ const User = (props) => {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
+
+    nprogress.start()
 
     function getRandomArbitrary(min, max) {
       return (Math.random() * (max - min) + min).toFixed(0);
@@ -27,11 +42,86 @@ const User = (props) => {
 
       localStorage.userInfo = JSON.stringify(userInfo)
       setUserInfo(userInfo)
+      nprogress.done()
     } else {
       let data = JSON.parse(localStorage.userInfo)
       setUserInfo(data)
+      nprogress.done()
     }
   }, [])
+
+  const newAccount = () => {
+    localStorage.clear();
+    window.location.reload()
+  }
+
+
+
+  const setPosition = (position) => {
+    let newLocation = {
+      lat: position.coords.latitude,
+      long: position.coords.longitude,
+    }
+
+    localStorage.currentPosition = JSON.stringify(newLocation)
+
+    // update user location
+
+    let userData = userInfo;
+    userData.location = newLocation;
+    localStorage.userInfo = JSON.stringify(userData)
+
+    setTimeout(() => {
+      nprogress.done()
+      window.location.reload();
+    }, 1500)
+
+    swal.fire({
+      title: "Success",
+      text: "location set successfully!",
+      icon: 'success',
+      showCancelButton: false,
+      showConfirmButton: false,
+      timer: 1200,
+    })
+  }
+
+
+  const displayError = (error) => {
+    var errors = {
+      1: 'Permission denied',
+      2: 'Position unavailable',
+      3: 'Request timeout'
+    };
+    swal.fire("Error!", `Geo Location API : ${errors[error.code]}`, 'error');
+    nprogress.done()
+  }
+
+  const requestlocation = () => {
+    nprogress.start()
+    swal.fire({
+      title: "Requesting",
+      text: "kindly accept to location prompt to pin down your current location.",
+      icon: "info",
+      showConfirmButton: false,
+      showCancelButton: true,
+      allowOutsideClick: false
+    })
+
+    swal.showLoading()
+
+    if (navigator.geolocation) {
+      var timeoutVal = 10 * 1000 * 1000;
+      navigator.geolocation.getCurrentPosition(
+        setPosition,
+        displayError,
+        { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+      )
+    } else {
+      swal.fire("Error", "GPS is not supported for your device", "error")
+    }
+
+  }
 
 
 
@@ -109,6 +199,8 @@ const User = (props) => {
                          </div>
                               </>
                             )}
+
+                            <button className="btn btn-default mt-3" onClick={newAccount}> <i className="la la-user" /> New Demo Account</button>
                           </div>
                         </div>
                       </div>
@@ -130,13 +222,13 @@ const User = (props) => {
                           <div className="card-body px-0">
                             <div>
                               <h6 className="heading-small text-muted mb-4">Recent Incident Reports</h6>
-                              <div className="content-block">
-                                <span>this is some data</span>
-                              </div>
+                              <PinBanner />
                             </div>
                           </div>
                         </div>
-                        <button className="btn btn-default d-block"> <i className="la la-directions" /> Pin Location</button>
+                        <button
+                          onClick={requestlocation}
+                          className="btn btn-default d-block"> <i className="la la-map-marker" /> Pin Location</button>
                       </div>
 
 
