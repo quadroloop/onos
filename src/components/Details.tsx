@@ -1,5 +1,6 @@
 import React from 'react'
 import img_placeholder from '../assets/mapx.png'
+import WeatherDetails from './WeatherDetails';
 
 const Details = (props) => {
   return (
@@ -66,9 +67,7 @@ const Details = (props) => {
                     <div className="col">
                       <h3 className="mb-0"> <i className="la la-map-marker text-primary" /> Location Information</h3>
                     </div>
-                    {/* <div className="col-4 text-right">
-                      <a href="#!" className="btn btn-sm btn-primary">Settings</a>
-                    </div> */}
+
                   </div>
                 </div>
                 <div className="card-body">
@@ -83,56 +82,11 @@ const Details = (props) => {
               </div>
 
 
-              <div className="card shadow1 border-none mb-3">
-                <div className="card-header">
-                  <div className="row align-items-center">
-                    <div className="col">
-                      <h3 className="mb-0"> <i className="la la-comment-medical text-danger" /> COVID-19 Information</h3>
-                    </div>
-                    {/* <div className="col-4 text-right">
-                      <a href="#!" className="btn btn-sm btn-primary">Settings</a>
-                    </div> */}
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div>
-                    <h6 className="heading-small text-muted mb-4">Related information</h6>
-                    <div className="content-block">
-                      <span>this is some data</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
 
-              <div className="card shadow1 border-none mb-3">
-                <div className="card-header">
-                  <div className="row align-items-center">
-                    <div className="col">
-                      <h3 className="mb-0"> <i className="la la-wind" /> Weather Information</h3>
-                    </div>
-                    {/* <div className="col-4 text-right">
-                      <a href="#!" className="btn btn-sm btn-primary">Settings</a>
-                    </div> */}
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div>
-                    <h6 className="heading-small text-muted mb-4">Related information</h6>
-                    <div className="content-block">
-                      <span>this is some data</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              <WeatherDetails />
 
             </div>
-
-
-
-
-
           </div>
         </div>
       </div>
