@@ -23,18 +23,38 @@ function App() {
     })
   })
 
+  const verifyReport = () => {
+
+    let report = JSON.parse(localStorage.currentIncident)
+
+    socket.emit("verifyReport", report);
+    swal.fire({
+      "icon": "success",
+      "title": "New Incident Report",
+      "text": "there is a new incident report! please recheck the incidents tab to review"
+    })
+      .then(res => {
+        if (res) {
+          document.getElementById('genDetails').click();
+        }
+      })
+  }
+
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Responder />
-        </Route>
-        <Route path="/users">
-          <User />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <button className="d-none" onClick={verifyReport} id="ver-btn" />
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Responder />
+          </Route>
+          <Route path="/users">
+            <User />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
