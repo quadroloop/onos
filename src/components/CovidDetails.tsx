@@ -43,8 +43,10 @@ const CovidDetails = (props) => {
       <div className="card-body">
       <div>
         <div className="content-block covid-info">
+          {result && 
           <h3 style={{padding:"20px"}}>Total COVID-19 Cases in this area: <span style={{color:"red"}}>{result.length} Cases</span></h3>
-        </div>
+          }
+          </div>
       </div>
     </div>
     }
