@@ -2,7 +2,7 @@ import React from 'react'
 
 const IncidentCard = (props) => {
   return (
-    <div className="incident-card shadow1">
+    <div className="incident-card shadow1 fade-in">
       <div className="reportee">
         <img src="https://www.biography.com/.image/t_share/MTY2Njc5MTIyNzY2OTk2NTM1/nikola_tesla_napoleon-sarony-public-domain-via-wikimedia-commons.jpg" alt="reportee-image" />
         <span><strong>Aletheia Grace Del Rosario</strong></span>

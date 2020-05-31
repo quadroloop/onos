@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import WeatherFeed from './WeatherFeed';
 import EvacuationAreas from './EvacuationAreas';
 import Details from './Details';
+import Reports from './Reports';
 
 
 
@@ -29,6 +30,11 @@ const Panel = (props) => {
               Evacuation Areas
           </strong>
           </span>
+          <span className={`x-item ${tab === "reports" ? "active" : ""}`} onClick={() => { setTab('reports') }}><i className="la la-bolt mr-1" />
+            <strong>
+              Incidents
+          </strong>
+          </span>
           <span onClick={togglePanel} className="mr-0 pr-0">
             <i className={`expand la la-${isWide ? "chevron-circle-down" : "chevron-circle-up"}`} />
           </span>
@@ -45,6 +51,10 @@ const Panel = (props) => {
 
         {tab === "evacuation" && (
           <EvacuationAreas />
+        )}
+
+        {tab === "reports" && (
+          <Reports />
         )}
 
 

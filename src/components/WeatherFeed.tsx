@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import axios from 'axios'
 import AlertCard from './AlertCard';
-import AreaCard from './AreaCard';
-import IncidentCard from './IncidentCard';
 
 
 const GradientSVG = (props) => {
@@ -67,7 +65,6 @@ const WeatherFeed = (props) => {
 
   return (
     <div className="card-thread draggable">
-      <IncidentCard />
       <AlertCard />
       {
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5].map((x, index) => {
