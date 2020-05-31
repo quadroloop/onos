@@ -35,10 +35,14 @@ const Details = (props) => {
         {/* Page content */}
 
         <div className="container-fluid">
-          <h1><i className="la la-bullseye text-danger" /> Incident Report</h1>
+          {localStorage.dtype !== "incident" ? (
+            <h1><i className="la la-indent text-primary" /> More Details</h1>
+          ) : (
+              <h1><i className="la la-bullseye text-danger" /> Incident Report</h1>
+            )}
           <div className="row">
 
-            {localStorage.detailtype === "incident" && (
+            {localStorage.dtype === "incident" && (
               <div className="col-xl-4 order-xl-2 fade-in">
                 <div className="card card-profile shadow1 border-none mb-3">
                   <img src={img_placeholder} alt="Image placeholder" className="card-img-top" />
@@ -87,7 +91,7 @@ const Details = (props) => {
             )}
 
 
-            <div className={localStorage.detailtype === "incident" ? "col-xl-8 order-xl-1" : "container"}>
+            <div className={localStorage.dtype === "incident" ? "col-xl-8 order-xl-1" : "container"}>
 
               <LocationDetails
                 data={location}
