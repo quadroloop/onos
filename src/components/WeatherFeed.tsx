@@ -22,7 +22,12 @@ const GradientSVG = (props) => {
 }
 
 const goTo = (data) => {
-  console.log(data)
+  let newCoords = {
+    lat: data.lat,
+    long: data.lng
+  }
+
+  localStorage.currentLocation = JSON.stringify(newCoords)
 }
 
 

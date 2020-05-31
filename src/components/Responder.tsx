@@ -58,22 +58,22 @@ const Responder = () => {
     }
 
 
-    nprogress.start()
-    Axios.get('/dataset/cases.json')
-      .then(res => {
-        console.log(res.data.length)
-        let processedItems = []
-        let parseData = res.data.filter(x => {
-          if (!processedItems.includes(x.id) && x.north_coord !== "" && x.east_coord !== "") {
-            processedItems.push(x.id)
-            return x
-          }
-        })
-        console.log(parseData)
-        createCovidMap(parseData)
-        setCases(parseData)
-        nprogress.done()
-      })
+    // nprogress.start()
+    // Axios.get('/dataset/cases.json')
+    //   .then(res => {
+    //     console.log(res.data.length)
+    //     let processedItems = []
+    //     let parseData = res.data.filter(x => {
+    //       if (!processedItems.includes(x.id) && x.north_coord !== "" && x.east_coord !== "") {
+    //         processedItems.push(x.id)
+    //         return x
+    //       }
+    //     })
+    //     console.log(parseData)
+    //     createCovidMap(parseData)
+    //     setCases(parseData)
+    //     nprogress.done()
+    //   })
 
   }, [])
 
