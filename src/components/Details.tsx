@@ -97,9 +97,9 @@ const Details = (props) => {
               {location && (
                 <CovidDetails {...props} location={location} />
               )}
-
-              <WeatherDetails />
-
+              {location && (
+                <WeatherDetails />
+              )}
             </div>
           </div>
         </div>
