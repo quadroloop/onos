@@ -4,6 +4,7 @@ const CovidDetails = (props) => {
 
 
   console.log("covid data", props.ccovidData)
+  console.log("address", props.location[0].formatted_address)
 
   return (
     <div className="card shadow1 border-none mb-3">

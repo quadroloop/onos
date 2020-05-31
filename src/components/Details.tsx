@@ -94,7 +94,9 @@ const Details = (props) => {
                 data={location}
               />
 
-              <CovidDetails {...props} />
+              {location && (
+                <CovidDetails {...props} location={location} />
+              )}
 
               <WeatherDetails />
 
