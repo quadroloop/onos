@@ -155,6 +155,11 @@ const Map = (props) => {
       }
     }
 
+    map.on('click', (e) => {
+      let ncoords = { lat: e.lngLat.wrap().lat, long: e.lngLat.wrap().lng }
+      localStorage.currentLocation = JSON.stringify(ncoords)
+    })
+
 
     function mapTo() {
       let currentLocation = JSON.parse(localStorage.currentLocation);
