@@ -2,40 +2,37 @@ import React, {useEffect, useState} from 'react'
 import SegmentLoader from './SegmentLoader';
 import axios from 'axios'
 
-const APIURL = 'https://whitecloaktechnologiesinc_andoy:7OUNHoaquR3t2@api.meteomatics.com/'
+// const APIURL = 'https://whitecloaktechnologiesinc_andoy:7OUNHoaquR3t2@api.meteomatics.com/'
 const location = JSON.parse(localStorage.currentLocation);
-console.log(location)
-
 
 const WeatherDetails = () => {
-  const [isRain, setIsRain] = useState(false)
-  const [temp, setTemp] = useState("")
-  const [humid, setHumid] = useState("")
-  const [wind, setWind] = useState("")
-  const [thunderWarning, setThunderWarning] = useState("No Thunderstorms")
-  const [heavyWarning, setHeavyWarning] = useState("No Severe Rainfall")
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
+  const [sunrise, setSunrise] = useState("")
+  const [sunset, setSunset] = useState("")
+
 
   useEffect(()=> {
-    fetchIsRain()
-    // fetchTemp()
-    // fetchHumid()
-    // fetchWind()
-    // fetchThunderWarning()
-    // fetchHeavyWarning()
+    fetchData()
   },[])
 
-  const fetchIsRain = async () => {
-    axios.get(`${APIURL}is_rain_1h:idx/${location.lat},${location.long}/json`)
+  const fetchData = async () => {
+    setLoading(false)
+    axios.get(`https://api.aerisapi.com/forecasts/${location.lat},${location.long}?client_id=SXVBIrgMRkQh9VDBKLscu&client_secret=JA8ICLfhS4LXONuHNAyInYze0UzUNxjbl8xjEHkb`)
     .then(res => {
-      const data = res.data;
-      if (data.data[0].coordinates[0].dates.value === 1) {
-        setIsRain(true)
-      } else {
-        setIsRain(false)
-      }
+      const data = res.data.response[0].periods[0];
+      var sunsetData = new Date(data.sunsetISO).toLocaleTimeString('en',{ hour12: true, timeZone: 'Asia/Manila' })
+      var sunriseData = new Date(data.sunriseISO).toLocaleTimeString('en',{ hour12: true, timeZone: 'Asia/Manila' })
+      setSunset(sunsetData)
+      setSunrise(sunriseData)
+      setData(data)
+      setLoading(true)
     })
     .catch(error => {
       console.log(error)
+      setLoading(true)
+      setIsError(true);
     })
   }
  
@@ -48,41 +45,46 @@ const WeatherDetails = () => {
           </div>
         </div>
       </div>
+      {loading ? (
       <div className="card-body">
         <div>
-        {isRain ? (   
-       <div className="content-block-rain-warning">
-           <span><i className="la la-exclamation-circle" /> There is rain in this area, bring your umbrella</span>
-       </div>
-        ) : (
-        <div className="content-block">
-          <span><i className="la la-check-circle" /> There is no rain in this area</span>
+        { data && 
+        <div className="content-block-rain-warning">
+          <span><i className="la la-cloud-sun" /> The weather in this place is: {data.weather}</span>
         </div>
-        )
         }
         <div className="weather-info-container">
           <div className="info-left">
+            {data &&
             <div className="weather-info-card temp">
-              <span><i className="la la-temperature-high" /> Temperature: 36 °C</span>
+              <span><i className="la la-temperature-high" /> Temperature: {data.avgTempC}°C / {data.avgTempF}°F</span>
             </div>
+            }
+            {data &&
             <div className="weather-info-card humid">
-              <span><i className="la la-cloud-rain" /> Humidity: 36 %</span>
+              <span><i className="la la-cloud-rain" /> Humidity: {data.humidity}%</span>
             </div>
+            }
+            {data &&
             <div className="weather-info-card wind">
-              <span><i className="la la-wind" /> Wind: 36 k/mh</span>
+              <span><i className="la la-wind" /> Wind Speeds: {data.windSpeedKPH}k/mh</span>
             </div>
+            }
           </div>
           <div className="info-right">
+            {data &&
             <div className="weather-info-card thunder-warning">
-              <span><i className="la la-bolt" /> Thunderstorm Warning: {thunderWarning}</span>
+              <span><i className="la la-sun" /> Sunrise: {sunrise}</span> <br/>
+              <span><i className="la la-cloud-showers-heavy" /> Sunset: {sunset}</span>
             </div>
-            <div className="weather-info-card heavy-warning">
-              <span><i className="la la-cloud-showers-heavy" /> Heavy Rain Warning: {heavyWarning}</span>
-            </div>
+            }
           </div>
         </div>     
         </div>
       </div>
+      ) : (
+        <SegmentLoader/>
+      ) }
     </div>
   )
 }

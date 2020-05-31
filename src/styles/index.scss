@@ -208,11 +208,11 @@ div::-webkit-scrollbar-thumb
 }
 
 .content-block-rain-warning{
-  background: #192b4d;
+  background-color: #d9e4f5;
+  background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
   border-radius: 4px;
   border: 1px solid rgb(217, 233, 236);
   padding: 10px;
-  color: white;
 }
 
 .weather-info-container {
@@ -234,6 +234,16 @@ div::-webkit-scrollbar-thumb
     border: 1px solid rgb(217, 233, 236);
     padding: 10px;
     margin: 10px 0px;
+    &.thunder-warning {
+      color: white;
+      background-color: #f7b42c;
+      background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+    }
+    &.heavy-warning {
+      color: white;
+      background-color: #ff4e00;
+      background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+    }
   }
 }
 
@@ -245,6 +255,7 @@ div::-webkit-scrollbar-thumb
     }
     .info-right {
       width: 100%;
+      
     }
   }
 }
