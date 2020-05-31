@@ -14,8 +14,6 @@ const EvacuationAreas = (props) => {
 
   const location = JSON.parse(localStorage.currentLocation);
 
-
-
   const fetchForeCast = () => {
     if (localStorage.currentLocation) {
       axios.get(`${API_URL}/places/nearby`, {

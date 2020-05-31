@@ -19,6 +19,7 @@ const Details = (props) => {
       }
     })
       .then(res => {
+        console.log(res.data.results)
         setlocationData(res.data.results)
       })
   }
