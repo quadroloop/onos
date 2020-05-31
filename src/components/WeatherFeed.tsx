@@ -21,12 +21,15 @@ const GradientSVG = (props) => {
   );
 }
 
+const goTo = (data) => {
+  console.log(data)
+}
 
 
 
 const RainWidget = item => {
   return (
-    <div className="info-card shadow1 fade-in" onClick={() => { alert('yes') }}>
+    <div className="info-card shadow1 fade-in" onClick={() => { goTo(item.data) }}>
       <div className="info-header">
         <small>{item.data.location}</small>
       </div>
@@ -74,16 +77,20 @@ const WeatherFeed = (props) => {
 
   return (
     <div className="card-thread draggable">
-      <AlertCard />
       {
         weatherData ? (
-          weatherData.map((x, index) => {
-            if (x.data.length !== 0) {
-              return (
-                <RainWidget data={x} />
-              )
+          <>
+            <AlertCard />
+            {
+              weatherData.map((x, index) => {
+                if (x.data.length !== 0) {
+                  return (
+                    <RainWidget data={x} />
+                  )
+                }
+              })
             }
-          })
+          </>
         ) : (
             <SegmentLoader />
           )

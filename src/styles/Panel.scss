@@ -76,6 +76,14 @@
   padding: 1px 10px;
   border-radius: 4px;
   margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover{
+    transition: 0.3s;
+  box-shadow: 0 5px 10px rgba(133, 144, 182, 0.644), 0 15px 40px rgba(166,173,201,.2) !important;
+
+  }
 
 .info-header{
   padding: 1px;

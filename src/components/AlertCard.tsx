@@ -14,7 +14,7 @@ const AlertCard = () => {
           <span className="type">Typhoon</span>
           <span className="hazard-name">VONGFONG</span>
           <small className="text-muted">Archived Data</small>
-          <small className="badge">Learn More</small>
+          <small className="mt-2"> <i className="la la-angle-right" /> Learn More</small>
         </div>
 
       </div>
