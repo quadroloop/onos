@@ -122,10 +122,33 @@ const User = (props) => {
                               <span className="small">Note: This is just a Demo. No personal information will be disclosed or taken without permission.</span>
                             </div>
 
+                            <div className="table-responsive mt-3">
+                              {/* Projects table */}
+                              <table className="table align-items-center table-flush">
+                                <thead className="thead-light">
+                                  <tr>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Status</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">/argon/</th>
+                                    <td>4,569</td>
+                                    <td>
+                                      <button className="btn btn-warning btn-sm">Pending</button>
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
+
                             <hr />
                             <span className="heading-small text-muted mb-4">New incident report</span>
 
-                            <textarea className="form-control" placeholder="Description" />
+                            <textarea className="form-control p-3" placeholder="Description" />
                           </div>
                         </div>
                       </div>

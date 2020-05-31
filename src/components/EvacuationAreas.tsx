@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import AreaCard from './AreaCard';
 import SegmentLoader from './SegmentLoader';
+import { API_URL } from './Utilities';
 
 
 
@@ -18,7 +19,7 @@ const EvacuationAreas = (props) => {
 
   const fetchForeCast = () => {
     if (localStorage.currentLocation) {
-      axios.get(`http://onos-chore.herokuapp.com/places/nearby`, {
+      axios.get(`${API_URL}/places/nearby`, {
         params: {
           location: `${location.lat},${location.long}`,
           keywords: "hospital,school",
@@ -42,11 +43,7 @@ const EvacuationAreas = (props) => {
           {
             areas.map((item: any, index: any) => {
               return (
-                /*
-        // @ts-ignore */
                 <AreaCard
-                  /*
-          // @ts-ignore */
                   index={index}
                   data={item}
                 />
