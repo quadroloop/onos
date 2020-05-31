@@ -219,8 +219,8 @@ const User = (props) => {
                                   Address:
                          </div>
                                 <div>
-                                  Lorem Ipsum Dolor simet
-                         </div>
+                                  {userInfo.address}
+                                </div>
                               </>
                             )}
 
@@ -245,9 +245,18 @@ const User = (props) => {
                           </div>
                           <div className="card-body px-0">
                             <div>
-                              <h6 className="heading-small text-muted mb-4">Recent Incident Reports</h6>
+                              <h6 className="heading-small text-muted mb-4">Current Location</h6>
                               {!userInfo.location && (
                                 <PinBanner />
+                              )}
+
+                              {userInfo.location && (
+                                <>
+                                  <h1>
+                                    {userInfo.address}
+                                  </h1>
+                                  <small>If this is incorrect you may click the pin location button below to update it.</small>
+                                </>
                               )}
                             </div>
                           </div>

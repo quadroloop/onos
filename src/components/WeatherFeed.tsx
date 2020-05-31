@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import axios from 'axios'
 import AlertCard from './AlertCard';
+import { API_URL } from './Utilities';
+import SegmentLoader from './SegmentLoader';
 
 
 const GradientSVG = (props) => {
@@ -22,16 +24,16 @@ const GradientSVG = (props) => {
 
 
 
-const RainWidget = data => {
+const RainWidget = item => {
   return (
     <div className="info-card shadow1 fade-in" onClick={() => { alert('yes') }}>
       <div className="info-header">
-        <small>{data.city}</small>
+        <small>{item.data.location}</small>
       </div>
       <div style={{ width: 80, height: 80, margin: "auto" }}>
         <CircularProgressbar
-          value={data.percent}
-          text={`${data.percent}%`}
+          value={item.data.data[0].percent_chance_of_rain}
+          text={`${item.data.data[0].percent_chance_of_rain}%`}
         />
         <GradientSVG
           startColor="#56CCF2"
@@ -41,12 +43,14 @@ const RainWidget = data => {
       </div>
       <div className="d-flex justify-content-center pt-1">
         <small>
-          Chance of rain
-       </small>
+          {item.data.data[0].chance_of_rain}
+        </small>
       </div>
     </div>
   )
 }
+
+
 
 
 
@@ -57,21 +61,32 @@ const WeatherFeed = (props) => {
 
   const fetchForeCast = () => {
     setWeather(null)
+    axios.get(`${API_URL}/forecasts`)
+      .then(res => {
+        setWeather(res.data[0].data)
+        // console.log(res.data[0].data)
+      })
   }
 
   useEffect(() => {
     fetchForeCast()
-  })
+  }, [])
 
   return (
     <div className="card-thread draggable">
       <AlertCard />
       {
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5].map((x, index) => {
-          return (
-            <RainWidget city="MAKATI" percent={78} index={index} />
+        weatherData ? (
+          weatherData.map((x, index) => {
+            if (x.data.length !== 0) {
+              return (
+                <RainWidget data={x} />
+              )
+            }
+          })
+        ) : (
+            <SegmentLoader />
           )
-        })
       }
     </div>
   )
