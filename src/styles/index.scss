@@ -206,3 +206,45 @@ div::-webkit-scrollbar-thumb
   border: 1px solid rgb(217, 233, 236);
   padding: 10px;
 }
+
+.content-block-rain-warning{
+  background: #192b4d;
+  border-radius: 4px;
+  border: 1px solid rgb(217, 233, 236);
+  padding: 10px;
+  color: white;
+}
+
+.weather-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .info-left {
+    width: 50%;
+    padding: 5px;
+    flex-direction: column;
+  }
+  .info-right {
+    width: 50%;
+    padding: 5px;
+    flex-direction: column;
+  }
+  .weather-info-card {
+    border-radius: 4px;
+    border: 1px solid rgb(217, 233, 236);
+    padding: 10px;
+    margin: 10px 0px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .weather-info-container {
+    flex-direction: column;
+    .info-left {
+      width: 100%;
+    }
+    .info-right {
+      width: 100%;
+    }
+  }
+}
