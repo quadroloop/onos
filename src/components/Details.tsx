@@ -1,6 +1,8 @@
 import React from 'react'
 import img_placeholder from '../assets/mapx.png'
 import WeatherDetails from './WeatherDetails';
+import CovidDetails from './CovidDetails';
+import LocationDetails from './LocationDetails';
 
 const Details = (props) => {
   return (
@@ -61,28 +63,9 @@ const Details = (props) => {
 
             <div className="col-xl-8 order-xl-1">
 
-              <div className="card shadow1 border-none mb-3">
-                <div className="card-header">
-                  <div className="row align-items-center">
-                    <div className="col">
-                      <h3 className="mb-0"> <i className="la la-map-marker text-primary" /> Location Information</h3>
-                    </div>
+              <LocationDetails />
 
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div>
-                    <h6 className="heading-small text-muted mb-4">Related information</h6>
-                    <div className="content-block">
-                      <span>this is some data</span>
-                    </div>
-                  </div>
-                </div>
-                <button className="btn btn-default d-block"> <i className="la la-directions" /> Get Directions</button>
-              </div>
-
-
-
+              <CovidDetails />
 
               <WeatherDetails />
 

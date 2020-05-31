@@ -92,6 +92,8 @@ const WeatherFeed = (props) => {
                   return (
                     <RainWidget data={x} />
                   )
+                } else {
+                  return false
                 }
               })
             }
