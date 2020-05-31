@@ -10,21 +10,6 @@ mapboxgl.accessToken = mapbox_key;
 const Map = (props) => {
 
   useEffect(() => {
-
-    if (!localStorage.originLocation) {
-      localStorage.originLocation = JSON.stringify({ long: 121.001433, lat: 14.507936 })
-    }
-
-    if (!localStorage.currentLocation) {
-      localStorage.currentLocation = JSON.stringify({ long: 121.001433, lat: 14.507936 })
-    }
-
-    if (!localStorage.currentIncident) {
-      localStorage.currentIncident = JSON.stringify({ uid: 0 })
-    }
-
-
-
     let currentLocation = JSON.parse(localStorage.currentLocation);
 
     const map = new mapboxgl.Map({
@@ -161,6 +146,7 @@ const Map = (props) => {
     })
 
     const toggleCovidLayer = () => {
+      console.log(props.covidMap)
       let visibility = map.getLayoutProperty('covid-cases', 'visibility')
       if (visibility === 'none') {
         map.setLayoutProperty('covid-cases', 'visibility', 'visible');

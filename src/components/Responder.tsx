@@ -24,7 +24,7 @@ const Responder = () => {
           "type": "Feature",
           "properties": {
             "id": item.id,
-            "mag": 1.3,
+            "mag": 0.5,
             "time": 1507425650893,
             "felt": 1,
             "tsunami": 0
@@ -38,25 +38,11 @@ const Responder = () => {
     });
 
     setCovidMap(collection)
-    console.log(collection)
+    console.log("covid map", collection)
 
   }
 
   useEffect(() => {
-
-    if (!localStorage.originLocation) {
-      localStorage.originLocation = JSON.stringify({ long: 121.001433, lat: 14.507936 })
-    }
-
-    if (!localStorage.currentLocation) {
-      localStorage.currentLocation = JSON.stringify({ long: 121.001433, lat: 14.507936 })
-    }
-
-    if (!localStorage.currentIncident) {
-      localStorage.currentIncident = JSON.stringify({ uid: 0 })
-    }
-
-
     nprogress.start()
     Axios.get('/dataset/cases.json')
       .then(res => {
@@ -68,7 +54,6 @@ const Responder = () => {
             return x
           }
         })
-        console.log(parseData)
         createCovidMap(parseData)
         setCases(parseData)
         nprogress.done()
