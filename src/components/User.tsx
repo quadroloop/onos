@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import img_placeholder from '../assets/mapb.png'
 import logo from '../assets/onos_mast.svg'
 import { guid } from './Utilities';
@@ -8,7 +8,7 @@ import { userInfo } from 'os';
 
 const User = (props) => {
 
-
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
 
@@ -26,12 +26,14 @@ const User = (props) => {
       }
 
       localStorage.userInfo = JSON.stringify(userInfo)
+      setUserInfo(userInfo)
+    } else {
+      let data = JSON.parse(localStorage.userInfo)
+      setUserInfo(data)
     }
   }, [])
 
-  const userInfo = () => {
-    return JSON.parse(localStorage.userInfo)
-  }
+
 
   return (
     <>
@@ -65,7 +67,7 @@ const User = (props) => {
               <div className="container-fluid">
                 <h1><i className="la la-user text-danger" /> User Profile</h1>
 
-                {localStorage.userInfo && (
+                {userInfo && (
                   <div className="row">
 
 
@@ -77,7 +79,7 @@ const User = (props) => {
                             <div className="col-lg-3 order-lg-2">
                               <div className="card-profile-image">
                                 <a href="#">
-                                  <img src={userInfo().profileImage} className="rounded-circle shadow1" />
+                                  <img src={userInfo.profileImage} className="rounded-circle shadow1" />
                                 </a>
                               </div>
                             </div>
@@ -91,13 +93,13 @@ const User = (props) => {
 
                           <div className="text-center">
                             <h5 className="h3">
-                              {userInfo().name}
+                              {userInfo.name}
                             </h5>
                             <div className="h5 font-weight-300">
                               <br />
                               {}
                             </div>
-                            {userInfo().location && (
+                            {userInfo.location && (
                               <>
                                 <div className="h5 mt-4">
                                   Address:
@@ -139,7 +141,7 @@ const User = (props) => {
 
 
                       {/* details thread */}
-                      {userInfo().location && (
+                      {userInfo.location && (
                         <>
 
 
