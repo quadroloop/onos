@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import img_placeholder from '../assets/mapb.png'
 import logo from '../assets/onos_mast.svg'
-import { guid } from './Utilities';
+import { guid, googleMapsAPIKEY } from './Utilities';
 import nprogress from 'nprogress'
 import swal from 'sweetalert2'
+import axios from 'axios'
 
 
 const PinBanner = () => {
@@ -55,6 +56,48 @@ const User = (props) => {
     window.location.reload()
   }
 
+  const reverseGeoCode = (loc) => {
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?`, {
+      params: {
+        latlng: `${loc.lat},${loc.long}`,
+        key: googleMapsAPIKEY
+      }
+    })
+      .then(res => {
+
+        let delta = res.data.results;
+
+        let userData = userInfo;
+
+        userData.address = delta[0].formatted_address
+
+        localStorage.userInfo = JSON.stringify(userData)
+
+        setTimeout(() => {
+          nprogress.done()
+          window.location.reload();
+        }, 1500)
+
+        swal.fire({
+          title: "Success",
+          text: "location set successfully!",
+          icon: 'success',
+          showCancelButton: false,
+          showConfirmButton: false,
+          timer: 1200,
+        })
+      })
+  }
+
+  const updateUserInfo = (newloc) => {
+
+    let userData = userInfo;
+    userData.location = newloc;
+    localStorage.userInfo = JSON.stringify(userData)
+
+    reverseGeoCode(newloc)
+  }
+
 
 
   const setPosition = (position) => {
@@ -65,27 +108,8 @@ const User = (props) => {
 
     localStorage.currentPosition = JSON.stringify(newLocation)
 
-    // update user location
-
-    let userData = userInfo;
-    userData.location = newLocation;
-    localStorage.userInfo = JSON.stringify(userData)
-
-    setTimeout(() => {
-      nprogress.done()
-      window.location.reload();
-    }, 1500)
-
-    swal.fire({
-      title: "Success",
-      text: "location set successfully!",
-      icon: 'success',
-      showCancelButton: false,
-      showConfirmButton: false,
-      timer: 1200,
-    })
+    updateUserInfo(newLocation)
   }
-
 
   const displayError = (error) => {
     var errors = {
@@ -222,7 +246,9 @@ const User = (props) => {
                           <div className="card-body px-0">
                             <div>
                               <h6 className="heading-small text-muted mb-4">Recent Incident Reports</h6>
-                              <PinBanner />
+                              {!userInfo.location && (
+                                <PinBanner />
+                              )}
                             </div>
                           </div>
                         </div>

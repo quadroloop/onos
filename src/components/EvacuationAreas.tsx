@@ -6,7 +6,6 @@ import { API_URL } from './Utilities';
 
 
 
-const googleMapsAPIKEY = "AIzaSyD5kFZMwUIUDZ25nTtLx0_0G3x1d2GMiCY";
 
 
 const EvacuationAreas = (props) => {

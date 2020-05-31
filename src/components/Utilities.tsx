@@ -9,3 +9,5 @@ export const guid = () => {
     return v.toString(16);
   });
 }
+
+export const googleMapsAPIKEY = "AIzaSyD5kFZMwUIUDZ25nTtLx0_0G3x1d2GMiCY";
