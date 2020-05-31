@@ -5,10 +5,13 @@ import CovidDetails from './CovidDetails';
 import LocationDetails from './LocationDetails';
 import { googleMapsAPIKEY } from './Utilities'
 import axios from 'axios'
+import moment from 'moment'
 
 const Details = (props) => {
 
   const [location, setlocationData] = useState(null)
+
+  const report = JSON.parse(localStorage.currentIncident)
 
   const fetchLocationDetails = () => {
     let loc = JSON.parse(localStorage.currentLocation)
@@ -51,9 +54,6 @@ const Details = (props) => {
                   <div className="row justify-content-center">
                     <div className="col-lg-3 order-lg-2">
                       <div className="card-profile-image mt--5">
-                        <a href="#">
-                          <img src="https://avatars1.githubusercontent.com/u/29462205?s=460&u=4509023c1c8946e206197eca17cdd589572249c0&v=4" className="rounded-circle" />
-                        </a>
                       </div>
                     </div>
                   </div>
@@ -71,18 +71,15 @@ const Details = (props) => {
 
                     <div className="text-center mt--5">
                       <h5 className="h3">
-                        Bryce Mercines
+                        Report Details
                       </h5>
                       <div className="h5 font-weight-300">
                         <br />
-                        Manila, Philippines
-                    </div>
+                        {moment(report.timestamp).format('MMMM D, YYYY')}
+                      </div>
                       <div className="h5 mt-4">
-                        Lorem Ipsum Dolor simet
-                    </div>
-                      <div>
-                        Lorem Ipsum Dolor simet
-                    </div>
+                        {report.details}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -97,7 +94,7 @@ const Details = (props) => {
                 data={location}
               />
 
-              <CovidDetails />
+              <CovidDetails {...props} />
 
               <WeatherDetails />
 

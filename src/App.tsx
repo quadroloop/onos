@@ -6,8 +6,23 @@ import {
 } from "react-router-dom";
 import Responder from './components/Responder';
 import User from './components/User';
+import io from 'socket.io-client';
+import { API_URL } from './components/Utilities';
+import swal from 'sweetalert2'
+
+const socket = io(API_URL)
 
 function App() {
+
+  socket.on("report", (data) => {
+    localStorage.currentIncident = JSON.parse(data)
+    swal.fire({
+      "icon": "error",
+      "title": "New Incident Report",
+      "text": "there is a new incident report! please recheck the incidents tab to review"
+    })
+  })
+
 
   return (
     <Router>

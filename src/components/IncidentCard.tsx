@@ -5,6 +5,7 @@ const IncidentCard = (props) => {
     <div className="info-card incident-card shadow1 fade-in"
       onClick={() => {
         localStorage.currentLocation = JSON.stringify(props.data.location)
+        localStorage.currentIncident = JSON.stringify(props.data)
         document.getElementById('mapJump').click()
         localStorage.dtype = "incident"
       }}

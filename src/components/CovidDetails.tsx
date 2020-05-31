@@ -2,7 +2,6 @@ import React from 'react'
 
 const CovidDetails = () => {
 
-  const location = JSON.parse(localStorage.currentLocation);
 
 
   return (
