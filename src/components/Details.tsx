@@ -61,7 +61,11 @@ const Details = (props) => {
                   <div className="card-header text-center border-0 pt-2 pt-md-4 pb-0 pb-md-4">
                     <div className="d-flex justify-content-between">
                       <a href="#" className="btn btn-sm btn-info  mr-4 ">Verify</a>
-                      <a href="#" className="btn btn-sm btn-default float-right">Dismiss</a>
+                      <a href="#"
+                        onClick={() => {
+                          document.getElementById('genDetails').click();
+                        }}
+                        className="btn btn-sm btn-default float-right">Dismiss</a>
                     </div>
                   </div>
 
