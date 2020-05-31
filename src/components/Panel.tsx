@@ -9,7 +9,7 @@ import Reports from './Reports';
 const Panel = (props) => {
 
 
-  const [isWide, setWide] = useState(true)
+  const [isWide, setWide] = useState(false)
   const [tab, setTab] = useState("weather")
 
 
@@ -57,8 +57,9 @@ const Panel = (props) => {
           <Reports />
         )}
 
-
-        <Details {...props} />
+        {isWide && (
+          <Details {...props} />
+        )}
 
 
 

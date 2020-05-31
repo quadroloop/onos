@@ -174,7 +174,7 @@ const Map = (props) => {
               'coordinates': [currentLocation.long, currentLocation.lat]
             },
             'properties': {
-              'title': `["hello"]: Incident report location`,
+              'title': `Incident report location`,
               'icon': 'alert-dot'
             }
           },
