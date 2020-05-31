@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/argond.css'
 import './styles/index.scss'
 import './styles/Panel.scss'
 import 'react-circular-progressbar/dist/styles.css';
