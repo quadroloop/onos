@@ -10,6 +10,7 @@ const Responder = () => {
 
   const [layers, setLayers] = useState([])
   const [covidMap, setCovidMap] = useState(null)
+  const [cases, setCases] = useState(null)
 
   const createCovidMap = (data) => {
     let collection = {
@@ -58,8 +59,6 @@ const Responder = () => {
 
 
     nprogress.start()
-
-
     Axios.get('/dataset/cases.json')
       .then(res => {
         console.log(res.data.length)
@@ -72,8 +71,8 @@ const Responder = () => {
         })
         console.log(parseData)
         createCovidMap(parseData)
+        setCases(parseData)
         nprogress.done()
-        console.log(res.data)
       })
 
   }, [])
@@ -91,7 +90,7 @@ const Responder = () => {
  */}
 
       <div>
-        <Panel />
+        <Panel covidData={cases} />
       </div>
     </>
   )
