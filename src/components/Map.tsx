@@ -11,17 +11,6 @@ const Map = (props) => {
 
   useEffect(() => {
 
-    if (!localStorage.originLocation) {
-      localStorage.originLocation = JSON.stringify({ long: 121.001433, lat: 14.507936 })
-    }
-
-    if (!localStorage.currentLocation) {
-      localStorage.currentLocation = JSON.stringify({ long: 121.001433, lat: 14.507936 })
-    }
-
-    if (!localStorage.currentIncident) {
-      localStorage.currentIncident = JSON.stringify({ uid: 0 })
-    }
 
     let currentLocation = JSON.parse(localStorage.currentLocation);
 

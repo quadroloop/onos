@@ -6,6 +6,18 @@
     background: rgba(0,0,0,0.8) !important;
     // backdrop-filter: none !important;
   }
+
+
+  .card-profile-image img {
+    max-width: 120px;
+    object-fit: cover;
+    border-radius: 4px !important;
+    transform: translate(-50%, -30%);
+    position: absolute;
+    left: 50%;
+    transition: all .15s ease;
+  box-shadow: 0 5px 10px rgba(133, 143, 182, 0.267), 0 15px 40px rgba(166,173,201,.2) !important;
+}
 }
 
 
