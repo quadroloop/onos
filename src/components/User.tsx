@@ -1,13 +1,31 @@
 import React from 'react'
-import img_placeholder from '../assets/mapx.png'
+import img_placeholder from '../assets/mapb.png'
+import logo from '../assets/onos_mast.svg'
+
 
 
 const User = (props) => {
   return (
     <>
       <div className="user-page">
-        <div className="user-header">
+
+
+        <div className="header">
+          <div className="nav-logo ml-2" onClick={() => { window.location.href = '/' }}>
+            <img src={logo} alt="onos-logo" />
+            <h3>ONOS</h3>
+          </div>
+
+          <div className="nav-group">
+            <span
+              onClick={() => { window.location.href = "/" }}
+              className=""><i className="la la-user-shield mr-2" />
+              <strong>Demo as Admin</strong>
+            </span>
+          </div>
         </div>
+
+
 
         <div className="user-banner normal">
         </div>
@@ -51,7 +69,7 @@ const User = (props) => {
                             Manila, Philippines
                     </div>
                           <div className="h5 mt-4">
-                            Lorem Ipsum Dolor simet
+                            Address:
                     </div>
                           <div>
                             Lorem Ipsum Dolor simet
@@ -65,22 +83,22 @@ const User = (props) => {
 
                   <div className="col-xl-8 order-xl-1">
 
+
+
                     <div className="card shadow1 border-none mb-3">
                       <div className="card-header">
                         <div className="row align-items-center">
                           <div className="col">
                             <h3 className="mb-0"> <i className="la la-map-marker text-primary" /> Pin Location</h3>
+
                           </div>
-                          {/* <div className="col-4 text-right">
-                      <a href="#!" className="btn btn-sm btn-primary">Settings</a>
-                    </div> */}
                         </div>
-                      </div>
-                      <div className="card-body">
-                        <div>
-                          <h6 className="heading-small text-muted mb-4">Related information</h6>
-                          <div className="content-block">
-                            <span>this is some data</span>
+                        <div className="card-body px-0">
+                          <div>
+                            <h6 className="heading-small text-muted mb-4">Recent Incident Reports</h6>
+                            <div className="content-block">
+                              <span>this is some data</span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -89,15 +107,34 @@ const User = (props) => {
 
 
 
+                    <div className="card shadow1 border-none mb-3">
+                      <div className="card-header">
+                        <div className="row align-items-center">
+                          <div className="col">
+                            <h3 className="mb-0"> <i className="la la-bullseye text-primary" />Incident Reports</h3>
+
+                          </div>
+                        </div>
+                        <div className="card-body px-0">
+                          <div>
+                            <h6 className="heading-small text-muted mb-4">Recent Incident Reports</h6>
+                            <div className="content-block">
+                              <span className="small">Note: This is just a Demo. No personal information will be disclosed or taken without permission.</span>
+                            </div>
+
+                            <hr />
+                            <span className="heading-small text-muted mb-4">New incident report</span>
+
+                            <textarea className="form-control" placeholder="Description" />
+                          </div>
+                        </div>
+                      </div>
+                      <button className="btn btn-danger d-block danger-btn"> <i className="la la-send" /> Send Report</button>
+                    </div>
 
 
 
                   </div>
-
-
-
-
-
                 </div>
               </div>
             </div>

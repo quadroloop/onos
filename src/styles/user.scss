@@ -1,5 +1,14 @@
 
 
+.user-page{
+
+  .header{
+    background: rgba(0,0,0,0.8) !important;
+    // backdrop-filter: none !important;
+  }
+}
+
+
 .user-header{
   background: rgba(0,0,0,0.5);
   padding: 10px;
@@ -8,9 +17,9 @@
 .user-banner{
   width: 100%;
   height: 30vh;
-  background: url('../assets/mapx.png');
-  background-size: cover;
-  filter: hue-rotate(190deg);
+  // background: url('../assets/mapx.png');
+  // background-size: cover;
+  // filter: hue-rotate(190deg);
   position: fixed;
   top: 0px;
 }
@@ -21,8 +30,16 @@
   padding-bottom: 40px;
   background: #fff;
   width: 100%;
-  top: 10vh;
+  top: 15vh;
   border-radius: 20px 20px 0px 0px;
-  z-index: 999;
+  z-index: 9;
   position: absolute;
+
+
 }
+
+.danger-btn{
+  background: rgb(131, 12, 12);
+  border:none;
+}
+

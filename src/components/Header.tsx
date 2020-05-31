@@ -36,7 +36,7 @@ const Header = (props) => {
 
   return (
     <div className="header">
-      <div className="nav-logo ml-2">
+      <div className="nav-logo ml-2" onClick={() => { window.location.href = '/' }}>
         <img src={logo} alt="onos-logo" />
         <h3>ONOS</h3>
       </div>
