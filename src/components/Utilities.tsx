@@ -11,3 +11,8 @@ export const guid = () => {
 }
 
 export const googleMapsAPIKEY = "AIzaSyD5kFZMwUIUDZ25nTtLx0_0G3x1d2GMiCY";
+
+
+export const normalizeText = (text) => {
+  return text.split("_").join(" ")
+}

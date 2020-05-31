@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import img_placeholder from '../assets/mapx.png'
 import WeatherDetails from './WeatherDetails';
 import CovidDetails from './CovidDetails';
 import LocationDetails from './LocationDetails';
+import { googleMapsAPIKEY } from './Utilities'
+import axios from 'axios'
 
 const Details = (props) => {
+
+  const [location, setlocationData] = useState(null)
+
+  const fetchLocationDetails = () => {
+    let loc = JSON.parse(localStorage.currentLocation)
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?`, {
+      params: {
+        latlng: `${loc.lat},${loc.long}`,
+        key: googleMapsAPIKEY
+      }
+    })
+      .then(res => {
+        setlocationData(res.data.results)
+      })
+  }
+
+  useEffect(() => {
+    fetchLocationDetails()
+  }, [])
+
   return (
     <div className="details-page">
       <div className="container">
@@ -63,7 +85,9 @@ const Details = (props) => {
 
             <div className="col-xl-8 order-xl-1">
 
-              <LocationDetails />
+              <LocationDetails
+                data={location}
+              />
 
               <CovidDetails />
 
