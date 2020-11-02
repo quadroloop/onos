@@ -34,4 +34,8 @@
 
 .map-container {
   height: 100vh;
+
+  img {
+    filter: contrast(130%);
+  }
 }
