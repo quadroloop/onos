@@ -1,22 +1,5 @@
-import Head from "next/head";
-import Layout from "../components/layout";
+import Dashboard from "../components/Dashboard";
 
 export default function Home({ allPostsData }) {
-  return (
-    <Layout home>
-      <Head>
-        <title>Onos - Phillippine weather dashboard</title>
-      </Head>
-      <h1>Onos</h1>
-    </Layout>
-  );
+  return <Dashboard />;
 }
-
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData();
-//   return {
-//     props: {
-//       allPostsData,
-//     },
-//   };
-// }
