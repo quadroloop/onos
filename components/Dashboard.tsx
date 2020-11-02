@@ -10,7 +10,7 @@ const Dashboard = () => {
       <div className="info-bar">
         <h1>Hello</h1>
       </div>
-      <div className="image-container">
+      <div className="map-container">
         <MapInteractionCSS maxScale={100} minScale={1}>
           <img
             src={
