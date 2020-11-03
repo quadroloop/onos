@@ -2,6 +2,9 @@ import sys
 import urllib.request
 import datetime
 
+CS = '\033[91m'
+CE = '\033[0m'
+
 args = sys.argv
 
 date_now = datetime.datetime.now()
@@ -12,7 +15,7 @@ latest_infrared_image = "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24h
 
 def help():
   print("Onos CLI is a tool to update content for the web application.")
-  print("\nUsage:\n")
+  print(CS+"\nUsage:\n"+CE)
   print("-s : Create snapshot of the current weather info. \n MSTAT Infrared Satellite images from DOST PAGASA / HIMAWARI-8 Satellite")
   print("-ds : Document Storm; create documentation of a storm in occurence")
 
@@ -32,7 +35,10 @@ def currentWeatherSnapshot():
   # print('Fetching latest image from: '+ latest_infrared_image)
   # image_name = "onos-snapshot-"+str(date_now).replace(" ","-")+".gif";
   # urllib.request.urlretrieve(latest_infrared_image, image_name)
-  # print("snapshot iamge saved!")
+  # print("snapshot image saved!")
+
+def documentEvent():
+  print("Stating Documentation:")
 
 # show splash
 splash()
@@ -44,5 +50,9 @@ if "-h" in args:
 # trigger current weather snapshot
 if "-s" in args:
   currentWeatherSnapshot()
+
+# trigger documentation of significant event
+if "-ds" in args:
+  documentEvent()
 
 
