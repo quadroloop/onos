@@ -2,6 +2,7 @@ import sys
 import urllib.request
 import datetime
 import json
+import uuid
 
 # dataset
 dataset_file = "./dataset.json"
@@ -82,12 +83,18 @@ def currentWeatherSnapshot():
 
   image_name = "onos-snapshot-"+str(date_now).replace(" ","-")+".gif";
 
+  # object is based on the data spec of meteopilipinas repository
   snapshot_data = {
-    "data": 1,
-    "data2": 2
+    "id": str(uuid.uuid4()),
+    "type": "snapshot",
+    "date": str(date_now.date()),
+    "time": str(date_now.time()),
+    "title": "Weather data collection",
+
+    "weather_info": []
   }
 
-  db["snapshots"].append(snapshot_data)
+  db.append(snapshot_data)
 
   print(db)
 
