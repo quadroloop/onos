@@ -1,9 +1,57 @@
 import sys
 import urllib.request
 import datetime
+import json
 
-CS = '\033[91m'
-CE = '\033[0m'
+# dataset
+dataset_file = "./dataset.json"
+db = json.load(open(dataset_file))
+
+
+# text style variables
+CEND      = '\33[0m'
+CBOLD     = '\33[1m'
+CITALIC   = '\33[3m'
+CURL      = '\33[4m'
+CBLINK    = '\33[5m'
+CBLINK2   = '\33[6m'
+CSELECTED = '\33[7m'
+
+CBLACK  = '\33[30m'
+CRED    = '\33[31m'
+CGREEN  = '\33[32m'
+CYELLOW = '\33[33m'
+CBLUE   = '\33[34m'
+CVIOLET = '\33[35m'
+CBEIGE  = '\33[36m'
+CWHITE  = '\33[37m'
+
+CBLACKBG  = '\33[40m'
+CREDBG    = '\33[41m'
+CGREENBG  = '\33[42m'
+CYELLOWBG = '\33[43m'
+CBLUEBG   = '\33[44m'
+CVIOLETBG = '\33[45m'
+CBEIGEBG  = '\33[46m'
+CWHITEBG  = '\33[47m'
+
+CGREY    = '\33[90m'
+CRED2    = '\33[91m'
+CGREEN2  = '\33[92m'
+CYELLOW2 = '\33[93m'
+CBLUE2   = '\33[94m'
+CVIOLET2 = '\33[95m'
+CBEIGE2  = '\33[96m'
+CWHITE2  = '\33[97m'
+
+CGREYBG    = '\33[100m'
+CREDBG2    = '\33[101m'
+CGREENBG2  = '\33[102m'
+CYELLOWBG2 = '\33[103m'
+CBLUEBG2   = '\33[104m'
+CVIOLETBG2 = '\33[105m'
+CBEIGEBG2  = '\33[106m'
+CWHITEBG2  = '\33[107m'
 
 args = sys.argv
 
@@ -14,31 +62,45 @@ latest_infrared_image = "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24h
 
 
 def help():
-  print("Onos CLI is a tool to update content for the web application.")
-  print(CS+"\nUsage:\n"+CE)
-  print("-s : Create snapshot of the current weather info. \n MSTAT Infrared Satellite images from DOST PAGASA / HIMAWARI-8 Satellite")
-  print("-ds : Document Storm; create documentation of a storm in occurence")
+  print(CGREY+"Onos CLI is a tool to update content for the web application."+CEND)
+  print(CITALIC+CBLUE+"\nUsage:\n"+CEND)
+  print(CYELLOW+"-s"+CEND+" : Create snapshot of the current weather info. \n     MSTAT Infrared Satellite images from DOST PAGASA / HIMAWARI-8 Satellite")
+  print(CYELLOW+"-ds"+CEND+" : Document Storm; create documentation of a storm in occurence")
 
 
 def splash():
-  print("==============================")
-  print(" ONOS v1 | Content CLI")
-  print("==============================")
+  print(CBLUE+"=============================="+CEND)
+  print(CGREEN2+" ONOS v1 | Content CLI"+CEND)
+  print(CBLUE+"=============================="+CEND)
 
   if len(args) == 1:
     help()
 
 def currentWeatherSnapshot():
-  print("Preparing current weather snapshot...")
-  print(date_now)
+  print(CYELLOW2+"Preparing current weather snapshot..."+CEND)
+  print(CYELLOW+"Date: "+CEND+str(date_now.date()))
+
+  image_name = "onos-snapshot-"+str(date_now).replace(" ","-")+".gif";
+
+  snapshot_data = {
+    "data": 1,
+    "data2": 2
+  }
+
+  db["snapshots"].append(snapshot_data)
+
+  print(db)
+
 
   # print('Fetching latest image from: '+ latest_infrared_image)
-  # image_name = "onos-snapshot-"+str(date_now).replace(" ","-")+".gif";
   # urllib.request.urlretrieve(latest_infrared_image, image_name)
   # print("snapshot image saved!")
 
 def documentEvent():
-  print("Stating Documentation:")
+  print(CYELLOW2+"Stating Documentation:"+CEND)
+
+  event_name = input("Event Name: ")
+  print(event_name)
 
 # show splash
 splash()
