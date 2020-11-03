@@ -8,6 +8,13 @@ import uuid
 dataset_file = "./dataset.json"
 db = json.load(open(dataset_file))
 
+# meteopilipinas / PAGASA / HIMAWARI-8 image files:
+img_colored = "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
+img_irbig = "https://src.meteopilipinas.gov.ph/repo/himawari/24hour/irbig/latestHIM_irbig.gif"
+img_vis = "https://src.meteopilipinas.gov.ph/repo/himawari/24hour/visbig/latestHIM_visbig.gif"
+
+image_dir = "/dataset/"
+
 
 # text style variables
 CEND      = '\33[0m'
@@ -78,25 +85,36 @@ def splash():
     help()
 
 def currentWeatherSnapshot():
+
+  snapshot_id =  str(uuid.uuid4());
+
   print(CYELLOW2+"Preparing current weather snapshot..."+CEND)
   print(CYELLOW+"Date: "+CEND+str(date_now.date()))
 
-  image_name = "onos-snapshot-"+str(date_now).replace(" ","-")+".gif";
+  colored = "cl-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
+  ir = "ir-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
+  vis = "vis-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
+
 
   # object is based on the data spec of meteopilipinas repository
   snapshot_data = {
-    "id": str(uuid.uuid4()),
+    "id": snapshot_id,
     "type": "snapshot",
     "date": str(date_now.date()),
     "time": str(date_now.time()),
     "title": "Weather data collection",
-
+    "img_colored": image_dir+colored,
+    "img_ir": image_dir+ir,
+    "img_vis": image_dir+vis,
     "weather_info": []
   }
 
   db.append(snapshot_data)
 
   print(db)
+
+  # TODO: perform a get request to get
+  # collective weather data for the specific time of snapshot
 
 
   # print('Fetching latest image from: '+ latest_infrared_image)
