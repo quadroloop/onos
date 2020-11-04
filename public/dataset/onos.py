@@ -4,7 +4,6 @@ import datetime
 import json
 import uuid
 from time import sleep
-from zipfile import ZipFile
 import os
 
 
@@ -83,6 +82,7 @@ def help():
   print(CITALIC+CBLUE+"\nUsage:\n"+CEND)
   print(CYELLOW+"-s"+CEND+" : Create snapshot of the current weather info. \n     Satellite images from DOST PAGASA / HIMAWARI-8 Satellite")
   print(CYELLOW+"-ds"+CEND+" : Document Event. Create documentation for a major weather event")
+  print(CYELLOW+"--backup"+CEND+" : Create a backup for the dataset directory")
   print(CYELLOW+"--purge-dataset"+CEND+" : Reset dataset.")
 
 
@@ -125,6 +125,17 @@ def fetchImage(url,file_name):
   print('Fetching latest image from: '+ url)
   urllib.request.urlretrieve(url, file_name)
   print("snapshot image saved ==> "+CGREEN2+file_name+CEND)
+
+
+def createBackUp():
+    print(CBLUE2+"Running back up process..."+CEND)
+    backup_name = "onos-backup-"+str(date_now.date())+".zip"
+    os.system("zip -r ../backup/"+backup_name+" .")
+    print(CYELLOW2+"=========================="+CEND)
+    print(CBEIGE+"Success: Back up process complete!"+CEND)
+    print(CBEIGE+"Back up archive directory is located in:"+CEND)
+    print(CBOLD+CBLUE2+"/backup/"+backup_name+CEND)
+
 
 
 def currentWeatherSnapshot():
@@ -197,6 +208,6 @@ if "--purge-dataset" in args:
 
 # create backup
 if "--backup" in args:
-  print("NOTE: Command is still a work in progress..")
+  createBackUp()
 
 
