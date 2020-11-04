@@ -3,6 +3,7 @@ import urllib.request
 import datetime
 import json
 import uuid
+from time import sleep
 
 # dataset
 dataset_file = "./dataset.json"
@@ -74,8 +75,9 @@ def writetoDB(data):
 def help():
   print(CGREY+"Onos CLI is a tool to update content for the web application."+CEND)
   print(CITALIC+CBLUE+"\nUsage:\n"+CEND)
-  print(CYELLOW+"-s"+CEND+" : Create snapshot of the current weather info. \n     MSTAT Infrared Satellite images from DOST PAGASA / HIMAWARI-8 Satellite")
-  print(CYELLOW+"-ds"+CEND+" : Document Storm; create documentation of a storm in occurence")
+  print(CYELLOW+"-s"+CEND+" : Create snapshot of the current weather info. \n     Satellite images from DOST PAGASA / HIMAWARI-8 Satellite")
+  print(CYELLOW+"-ds"+CEND+" : Document Event. Create documentation for a major weather event")
+  print(CYELLOW+"--purge-dataset"+CEND+" : Reset dataset.")
 
 
 def splash():
@@ -85,6 +87,23 @@ def splash():
 
   if len(args) == 1:
     help()
+
+def purgeDataset():
+  print(CRED2+"Warning: purging the dataset is not reversible and will remove all recorded data."+CEND)
+  print("If you only wish to backup the dataset you must use '--backup' instead.")
+
+  purge_confirmation = input(CGREEN2+"Do you wish to continue? (y/n): "+CEND)
+
+  if purge_confirmation == "y":
+    print(CRED2+"purging in 5s... you can still cancel this using CTRL+Z"+CEND)
+    sleep(5)
+    # purging dataset..
+    writetoDB([])
+    print(CBEIGE+"SUCCESS: dataset has been deleted."+CEND)
+
+  else:
+    print("purge cancelled!")
+
 
 def currentWeatherSnapshot():
 
@@ -143,5 +162,9 @@ if "-s" in args:
 # trigger documentation of significant event
 if "-ds" in args:
   documentEvent()
+
+# purge dataset
+if "--purge-dataset" in args:
+   purgeDataset()
 
 
