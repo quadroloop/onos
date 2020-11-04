@@ -16,9 +16,9 @@ dataset_file = "./dataset.json"
 db = json.load(open(dataset_file))
 
 # meteopilipinas / PAGASA / HIMAWARI-8 image files:
-img_colored = "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
-img_irbig = "https://src.meteopilipinas.gov.ph/repo/himawari/24hour/irbig/latestHIM_irbig.gif"
-img_vis = "https://src.meteopilipinas.gov.ph/repo/himawari/24hour/visbig/latestHIM_visbig.gif"
+img_colored = "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
+img_irbig = "http://src.meteopilipinas.gov.ph/repo/himawari/24hour/irbig/latestHIM_irbig.gif"
+img_vis = "http://src.meteopilipinas.gov.ph/repo/himawari/24hour/visbig/latestHIM_visbig.gif"
 
 image_dir = "/dataset/"
 
@@ -117,14 +117,20 @@ def purgeDataset():
     removeImages()
     writetoDB([])
     print(CBEIGE+"SUCCESS: dataset has been deleted."+CEND)
-
   else:
-    print("purge cancelled!")
+    print("Dataset purge cancelled!")
+
+
+def fetchImage(url,file_name):
+  print('Fetching latest image from: '+ url)
+  urllib.request.urlretrieve(url, file_name)
+  print("snapshot image saved ==> "+CGREEN2+file_name+CEND)
 
 
 def currentWeatherSnapshot():
 
   snapshot_id =  str(uuid.uuid4());
+
 
   print(CYELLOW2+"Preparing current weather snapshot..."+CEND)
   print(CYELLOW+"Date: "+CEND+str(date_now.date()))
@@ -133,6 +139,12 @@ def currentWeatherSnapshot():
   ir = "ir-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
   vis = "vis-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
 
+  fetch_file_names = [colored,ir,vis]
+  image_url_set = [img_colored,img_irbig,img_vis]
+
+  # fetch images from and save it.
+  for index, img in enumerate(image_url_set):
+    fetchImage(img,fetch_file_names[index])
 
   # object is based on the data spec of meteopilipinas repository
   snapshot_data = {
@@ -156,9 +168,7 @@ def currentWeatherSnapshot():
   # collective weather data for the specific time of snapshot
 
 
-  # print('Fetching latest image from: '+ latest_infrared_image)
-  # urllib.request.urlretrieve(latest_infrared_image, image_name)
-  # print("snapshot image saved!")
+
 
 def documentEvent():
   print(CYELLOW2+"Starting Documentation:"+CEND)
