@@ -12,7 +12,10 @@ dataset_directory = (r'./')
 
 # dataset
 dataset_file = "./dataset.json"
+dataset_info_file = "./dataset_info.json"
+
 db = json.load(open(dataset_file))
+db_ifno = json.load(open(dataset_info_file))
 
 # meteopilipinas / PAGASA / HIMAWARI-8 image files:
 img_colored = "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
@@ -71,10 +74,22 @@ args = sys.argv
 
 date_now = datetime.datetime.now()
 
+
 def writetoDB(data):
+
+  update_info = {
+    "last_updated": str(date_now),
+    "dataset_size": os.path.getsize(dataset_file),
+  }
+
   with open(dataset_file, 'w') as outfile:
     json.dump(data, outfile)
-    print(CBEIGE+"SUCESS: Dataset Updated!"+CEND)
+    print(CBEIGE+"SUCCESS: Dataset Updated!"+CEND)
+
+  # update dataset stats:
+
+  with open(dataset_info_file, 'w') as info_file:
+    json.dump(update_info, info_file)
 
 
 def help():
