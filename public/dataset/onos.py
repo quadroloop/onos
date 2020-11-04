@@ -4,6 +4,12 @@ import datetime
 import json
 import uuid
 from time import sleep
+from zipfile import ZipFile
+import os
+
+
+# dataset directory
+dataset_directory = (r'./')
 
 # dataset
 dataset_file = "./dataset.json"
@@ -88,6 +94,16 @@ def splash():
   if len(args) == 1:
     help()
 
+def removeImages():
+  files = os.listdir(dataset_directory)
+
+  for images in files:
+    if images.endswith(".gif"):
+        os.remove(os.path.join(dataset_directory, images))
+        print(CRED2+"Deleted file: "+CEND+str(images))
+
+
+
 def purgeDataset():
   print(CRED2+"Warning: purging the dataset is not reversible and will remove all recorded data."+CEND)
   print("If you only wish to backup the dataset you must use '--backup' instead.")
@@ -98,6 +114,7 @@ def purgeDataset():
     print(CRED2+"purging in 5s... you can still cancel this using CTRL+Z"+CEND)
     sleep(5)
     # purging dataset..
+    removeImages()
     writetoDB([])
     print(CBEIGE+"SUCCESS: dataset has been deleted."+CEND)
 
@@ -132,6 +149,7 @@ def currentWeatherSnapshot():
 
   db.append(snapshot_data)
 
+  # write to DB
   writetoDB(db)
 
   # TODO: perform a get request to get
@@ -166,5 +184,9 @@ if "-ds" in args:
 # purge dataset
 if "--purge-dataset" in args:
    purgeDataset()
+
+# create backup
+if "--backup" in args:
+  print("NOTE: Command is still a work in progress..")
 
 
