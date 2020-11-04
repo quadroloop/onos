@@ -65,8 +65,10 @@ args = sys.argv
 
 date_now = datetime.datetime.now()
 
-
-latest_infrared_image = "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
+def writetoDB(data):
+  with open(dataset_file, 'w') as outfile:
+    json.dump(data, outfile)
+    print(CBEIGE+"SUCESS: Dataset Updated!"+CEND)
 
 
 def help():
@@ -111,7 +113,7 @@ def currentWeatherSnapshot():
 
   db.append(snapshot_data)
 
-  print(db)
+  writetoDB(db)
 
   # TODO: perform a get request to get
   # collective weather data for the specific time of snapshot
@@ -122,7 +124,7 @@ def currentWeatherSnapshot():
   # print("snapshot image saved!")
 
 def documentEvent():
-  print(CYELLOW2+"Stating Documentation:"+CEND)
+  print(CYELLOW2+"Starting Documentation:"+CEND)
 
   event_name = input("Event Name: ")
   print(event_name)
