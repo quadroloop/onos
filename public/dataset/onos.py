@@ -190,17 +190,74 @@ def currentWeatherSnapshot():
   # write to DB
   writetoDB(db)
 
-  # TODO: perform a get request to get
-  # collective weather data for the specific time of snapshot
-
-
 
 
 def documentEvent():
   print(CYELLOW2+"Starting Documentation:"+CEND)
+  print(CYELLOW2+"Provide the following information:"+CEND)
 
-  event_name = input("Event Name: ")
-  print(event_name)
+  # collect data:
+
+  international_name = input(CBLUE2+"International Name: "+CEND)
+  event_type_jma = input(CBLUE2+"Event Type (JMA Scale): "+CEND)
+  event_type_sshws = input(CBLUE2+"Event Type (SSHWS): "+CEND)
+  local_name = input(CBLUE2+"Local Name: "+CEND)
+  date_formed = input(CBLUE2+"Date Formed: "+CEND)
+  date_dissipated = input(CBLUE2+"Date Dissipated: "+CEND)
+  highest_winds = input(CBLUE2+"Highest Winds: "+CEND)
+  lowest_pressure = input(CBLUE2+"Lowest Pressure: "+CEND)
+  fatalities = input(CBLUE2+"Fatalities: "+CEND)
+  damage = input(CBLUE2+"Damage: "+CEND)
+  areas_affected = input(CBLUE2+"Areas Affected: "+CEND)
+  event_sources = input(CBLUE2+"Source URLS (separated by comma): "+CEND)
+
+  weather_event_id =  str(uuid.uuid4());
+
+
+  print(CYELLOW2+"Preparing Weather event documentation..."+CEND)
+  print(CYELLOW+"Date: "+CEND+str(date_now.date()))
+
+  colored = "cl-"+weather_event_id+"-"+str(date_now).replace(" ","-")+".gif";
+  ir = "ir-"+weather_event_id+"-"+str(date_now).replace(" ","-")+".gif";
+  vis = "vis-"+weather_event_id+"-"+str(date_now).replace(" ","-")+".gif";
+
+  fetch_file_names = [colored,ir,vis]
+  image_url_set = [img_colored,img_irbig,img_vis]
+
+  # fetch images from and save it.
+  for index, img in enumerate(image_url_set):
+    fetchImage(img,fetch_file_names[index])
+
+  # object is based on the data spec of meteopilipinas repository
+  weather_event_data = {
+    "id": weather_event_data,
+    "type": "event",
+    "date": str(date_now.date()),
+    "time": str(date_now.time()),
+    "title": "Major Weather Event",
+    "img_colored": image_dir+colored,
+    "img_ir": image_dir+ir,
+    "img_vis": image_dir+vis,
+    "international_name": international_name,
+    "event_type_jma": event_type_jma,
+    "event_type_sshws": event_type_sshws,
+    "local_name": local_name,
+    "date_formed": date_formed,
+    "date_dissipated": date_dissipated,
+    "highest_winds": highest_winds,
+    "lowest_pressure": lowest_pressure,
+    "fatalities": fatalities,
+    "damage": damage,
+    "areas_affected": areas_affected,
+    "event_sources": event_sources,
+    "weather_info": []
+  }
+
+  db.append(weather_event_data)
+
+  # write to DB
+  writetoDB(db)
+
 
 # show splash
 splash()
