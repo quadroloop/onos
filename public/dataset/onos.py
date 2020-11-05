@@ -204,12 +204,12 @@ def documentEvent():
   local_name = input(CBLUE2+"Local Name: "+CEND)
   date_formed = input(CBLUE2+"Date Formed: "+CEND)
   date_dissipated = input(CBLUE2+"Date Dissipated: "+CEND)
-  highest_winds = input(CBLUE2+"Highest Winds: "+CEND)
-  lowest_pressure = input(CBLUE2+"Lowest Pressure: "+CEND)
+  highest_winds = input(CBLUE2+"Highest Winds (km/h): "+CEND)
+  lowest_pressure = input(CBLUE2+"Lowest Pressure (hPa): "+CEND)
   fatalities = input(CBLUE2+"Fatalities: "+CEND)
   damage = input(CBLUE2+"Damage: "+CEND)
   areas_affected = input(CBLUE2+"Areas Affected: "+CEND)
-  event_sources = input(CBLUE2+"Source URLS (separated by comma): "+CEND)
+  event_sources = input(CBLUE2+"Wikipedia aritcle slug: "+CEND)
 
   weather_event_id =  str(uuid.uuid4());
 
@@ -230,7 +230,7 @@ def documentEvent():
 
   # object is based on the data spec of meteopilipinas repository
   weather_event_data = {
-    "id": weather_event_data,
+    "id": weather_event_id,
     "type": "event",
     "date": str(date_now.date()),
     "time": str(date_now.time()),
@@ -249,7 +249,7 @@ def documentEvent():
     "fatalities": fatalities,
     "damage": damage,
     "areas_affected": areas_affected,
-    "event_sources": event_sources,
+    "wikipedia_article_slug": event_sources,
     "weather_info": []
   }
 
