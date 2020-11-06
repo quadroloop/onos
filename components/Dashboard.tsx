@@ -1,5 +1,6 @@
-import { MapInteractionCSS } from "react-map-interaction";
+// import { MapInteractionCSS } from "react-map-interaction";
 import "../styles/dashboard.scss";
+import InfoBar from "./InfoBar";
 import Layout from "./layout";
 
 const Dashboard = () => {
@@ -18,17 +19,17 @@ const Dashboard = () => {
             </a>
           </div>
         </div>
-        <div className="info-bar">
-          <h1>Hello</h1>
-        </div>
+
+        <InfoBar />
+
         <div className="map-container">
-          <MapInteractionCSS maxScale={100} minScale={1}>
+          {/* <MapInteractionCSS maxScale={100} minScale={1}>
             <img
               src={
                 "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
               }
             />
-          </MapInteractionCSS>
+          </MapInteractionCSS> */}
         </div>
       </div>
     </Layout>
