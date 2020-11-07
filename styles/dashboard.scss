@@ -7,6 +7,14 @@ $bg-primary: #252831;
   background: #000;
 }
 
+.text-white {
+  color: #fff !important;
+}
+
+.text-warning {
+  color: rgb(218, 157, 44);
+}
+
 .onos-sidebar {
   position: fixed;
   left: 10px;
@@ -110,7 +118,7 @@ $bg-primary: #252831;
   border-radius: 2px;
   width: 100%;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   height: auto;
 }
 
@@ -128,5 +136,30 @@ $bg-primary: #252831;
   small {
     font-size: 11px;
     color: #7e8085;
+  }
+}
+
+.image-widget {
+  $border-color: #3167ad;
+  padding: 5px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+
+  small {
+    font-size: 11px;
+    color: #7e8085;
+    margin-bottom: 5px;
+
+    i {
+      color: #42c5ba;
+    }
+  }
+
+  img {
+    height: auto;
+    width: auto;
+    object-fit: cover;
   }
 }

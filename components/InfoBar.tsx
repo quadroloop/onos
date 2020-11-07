@@ -1,4 +1,5 @@
 import Clock from "./Clock";
+import Image from "./Image";
 
 const InfoBar = () => {
   return (
@@ -9,8 +10,11 @@ const InfoBar = () => {
           <span>Menu</span>
           <span>Settings</span>
         </div>
-
-        <Clock />
+        <div className="content-body">
+          <Clock />
+          <Image />
+          <Image />
+        </div>
       </div>
     </>
   );
