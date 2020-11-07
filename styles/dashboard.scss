@@ -73,14 +73,27 @@ $bg-primary: #252831;
 
   .info-nav {
     background: $sidebar-header-color;
-    padding: 5px 20px;
-    color: #ddd;
+    padding: 0px 20px 8px;
 
     span {
       font-size: 11px;
       text-transform: uppercase;
-      margin-right: 10px;
+      margin-right: 15px;
+      color: rgb(124, 124, 124);
+      padding: 10px 5px;
+
+      &.active {
+        font-weight: 700;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+      }
     }
+  }
+
+  .content-body {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -89,5 +102,31 @@ $bg-primary: #252831;
 
   img {
     filter: contrast(130%) opacity(70%);
+  }
+}
+
+.card-item {
+  background: $sidebar-header-color;
+  border-radius: 2px;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.time-widget {
+  padding: 10px 15px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #42c5ba;
+
+  span {
+    font-weight: 100;
+  }
+
+  small {
+    font-size: 11px;
+    color: #7e8085;
   }
 }

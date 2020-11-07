@@ -1,12 +1,16 @@
+import Clock from "./Clock";
+
 const InfoBar = () => {
   return (
     <>
       <div className="info-bar">
         <div className="info-nav">
-          <span>Overview</span>
+          <span className="active">Overview</span>
           <span>Menu</span>
           <span>Settings</span>
         </div>
+
+        <Clock />
       </div>
     </>
   );
