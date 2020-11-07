@@ -1,5 +1,7 @@
 $sidebar-header-color: #323946;
 $bg-primary: #252831;
+$endless-river: linear-gradient(to left, #43cea2, #185a9d);
+$wire-tap: linear-gradient(to right, #8a2387, #e94057, #f27121);
 
 .dashboard-page {
   height: 100vh;
@@ -191,4 +193,46 @@ $bg-primary: #252831;
     display: flex;
     flex-direction: column;
   }
+}
+
+.onos-slider {
+  width: 100%;
+}
+
+.s-thumb {
+  background: #6f7481;
+  padding: 2px 5px;
+  font-size: 10px;
+  position: relative;
+  top: -6px;
+}
+
+.s-track {
+  background: $endless-river;
+  height: 7px;
+}
+
+.x-track {
+  background: $wire-tap;
+  height: 7px;
+}
+
+.s-track-1,
+.x-track-1 {
+  background: #515253;
+}
+
+.filter-sliders {
+  height: auto;
+}
+
+.slider-segment {
+  small {
+    font-size: 12px;
+    padding: 2px 10px;
+    position: relative;
+    top: -4px;
+  }
+  padding: 5px 0px;
+  margin-bottom: 20px;
 }

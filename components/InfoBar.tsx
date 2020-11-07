@@ -1,4 +1,5 @@
 import Clock from "./Clock";
+import FilterSettings from "./FilterSettings";
 import Image from "./Image";
 import Widget from "./Widget";
 
@@ -14,6 +15,7 @@ const InfoBar = () => {
         <div className="content-body">
           <Clock />
           <Image />
+          <FilterSettings />
           <Image />
           <Widget />
         </div>
