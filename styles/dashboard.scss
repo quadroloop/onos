@@ -163,3 +163,32 @@ $bg-primary: #252831;
     object-fit: cover;
   }
 }
+
+.card-widget {
+  padding: 10px 15px;
+  height: auto;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  border-left: 1px solid #42c5ba;
+
+  span {
+    font-weight: 100;
+  }
+
+  small {
+    font-size: 11px;
+    color: #7e8085;
+  }
+
+  i {
+    font-size: 50px;
+    margin-right: 20px;
+    color: #42c5ba;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}

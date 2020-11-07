@@ -1,5 +1,6 @@
 import Clock from "./Clock";
 import Image from "./Image";
+import Widget from "./Widget";
 
 const InfoBar = () => {
   return (
@@ -14,6 +15,7 @@ const InfoBar = () => {
           <Clock />
           <Image />
           <Image />
+          <Widget />
         </div>
       </div>
     </>

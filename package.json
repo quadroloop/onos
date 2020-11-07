@@ -19,6 +19,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-map-interaction": "^2.0.0",
+    "react-slider": "^1.1.1",
     "remark": "^12.0.0",
     "remark-html": "^12.0.0"
   },
