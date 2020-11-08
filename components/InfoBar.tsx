@@ -1,6 +1,7 @@
 import Clock from "./Clock";
 import FilterSettings from "./FilterSettings";
 import Image from "./Image";
+import ItemList from "./ItemList";
 import Widget from "./Widget";
 
 const InfoBar = () => {
@@ -17,6 +18,7 @@ const InfoBar = () => {
           <Image />
           <FilterSettings />
           <Image />
+          <ItemList />
           <Widget />
         </div>
       </div>

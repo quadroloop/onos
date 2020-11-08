@@ -243,3 +243,24 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   padding: 5px 0px;
   margin-bottom: 20px;
 }
+
+.item-list {
+  color: #6f7481;
+  background: $sidebar-header-color;
+  padding: 0px 0px;
+  list-style: none;
+
+  li {
+    font-size: 14px;
+    border-bottom: 1px solid #515253;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      font-size: 20px;
+      color: #42c5ba;
+    }
+  }
+}
