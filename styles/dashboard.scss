@@ -2,6 +2,7 @@ $sidebar-header-color: #323946;
 $bg-primary: #252831;
 $endless-river: linear-gradient(to left, #43cea2, #185a9d);
 $wire-tap: linear-gradient(to right, #8a2387, #e94057, #f27121);
+$brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
 
 .dashboard-page {
   height: 100vh;
@@ -217,8 +218,14 @@ $wire-tap: linear-gradient(to right, #8a2387, #e94057, #f27121);
   height: 7px;
 }
 
+.y-track {
+  background: $brady-fun;
+  height: 7px;
+}
+
 .s-track-1,
-.x-track-1 {
+.x-track-1,
+.y-track-1 {
   background: #515253;
 }
 
