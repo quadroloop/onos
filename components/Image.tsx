@@ -9,6 +9,9 @@ const Image = () => {
         src="https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
         alt="image-component"
       />
+      <button>
+        <i className="la la-crosshairs" /> Select
+      </button>
     </div>
   );
 };

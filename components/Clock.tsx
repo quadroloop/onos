@@ -5,7 +5,7 @@ const Clock = () => {
   const [date, setDate] = useState<any>("");
 
   const updateTime = () => {
-    let time = moment().tz("Asia/Philippines").format("hh:mm:ss A");
+    let time = moment().tz("Asia/Taiwan").format("hh:mm:ss A");
     setDate(time);
   };
 
@@ -17,7 +17,7 @@ const Clock = () => {
     <div className="card-item time-widget">
       <span>{date}</span>
       <small className="text-uppercase">
-        {moment().tz("Asia/Philippines").format("MMMM D, YYYY")}
+        {moment().tz("Asia/Taiwan").format("MMMM D, YYYY")}
       </small>
       <small>Philippine Standard Time</small>
     </div>
