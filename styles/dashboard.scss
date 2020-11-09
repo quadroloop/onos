@@ -14,6 +14,10 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   color: #fff !important;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 .text-warning {
   color: rgb(218, 157, 44);
 }
@@ -257,10 +261,19 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
 
     i {
       font-size: 20px;
       color: #42c5ba;
+    }
+
+    &:hover {
+      background: #314058;
+      border-left: 3px solid #42c5ba;
+      color: #42c5ba;
+      transition: 0.3s;
     }
   }
 }

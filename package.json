@@ -11,6 +11,8 @@
     "@zeit/next-sass": "^1.0.1",
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.31",
     "next": "^10.0.0",
     "next-fonts": "^1.4.0",
     "next-react-svg": "^1.1.2",
