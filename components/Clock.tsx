@@ -1,5 +1,6 @@
 import moment from "moment-timezone";
 import { useEffect, useState } from "react";
+import SkeletonRow from "./SkeletonRow";
 
 const Clock = () => {
   const [date, setDate] = useState<any>("");
@@ -15,7 +16,7 @@ const Clock = () => {
 
   return (
     <div className="card-item time-widget">
-      <span>{date}</span>
+      <span>{date ? date : <SkeletonRow />}</span>
       <small className="text-uppercase">
         {moment().tz("Asia/Manila").format("MMMM D, YYYY (dddd)")}
       </small>

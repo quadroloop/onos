@@ -200,6 +200,10 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   align-items: center;
   border-left: 1px solid #42c5ba;
 
+  div {
+    width: 100%;
+  }
+
   span {
     font-weight: 100;
   }
@@ -291,6 +295,13 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
     }
 
     &:hover {
+      background: #314058;
+      border-left: 3px solid #42c5ba;
+      color: #42c5ba;
+      transition: 0.3s;
+    }
+
+    &.active {
       background: #314058;
       border-left: 3px solid #42c5ba;
       color: #42c5ba;

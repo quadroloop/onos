@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactSlider from "react-slider";
 import Widget from "./Widget";
+import axios from "axios";
+import moment from "moment";
 
 const filterDefaults = () => {
   let defaults = {
@@ -26,6 +28,7 @@ const FilterSettings = () => {
   const [brightness, setBr] = useState<number>(filterDefaults().brightness);
   const [hue, setHue] = useState<number>(filterDefaults().hue);
   const [contrast, setContrast] = useState<number>(filterDefaults().contrast);
+  const [info, setInfo] = useState<any>(null);
 
   const saveSettings = () => {
     let filters = {
@@ -44,13 +47,27 @@ const FilterSettings = () => {
     localStorage.filterStyle = filtersStyle;
   };
 
+  useEffect(() => {
+    axios.get("/api").then((res: any) => {
+      setInfo(res.data.info);
+    });
+  });
+
   return (
     <>
       <p className="text-header">
         <i className="la la-database" /> Dataset Info
       </p>
 
-      <Widget />
+      <Widget
+        value={info && info.dataset_size}
+        icon={"la-layer-group"}
+        title={"DATASET SIZE"}
+        subtitle={
+          info &&
+          `Last updated: ${moment(info.last_update).format("MMM D, YYYY")}`
+        }
+      />
 
       <p className="text-header">
         <i className="la la-gear" /> Image Filter Settings

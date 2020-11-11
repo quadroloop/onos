@@ -1,11 +1,15 @@
-const Widget = () => {
+import SkeletonRow from "./SkeletonRow";
+
+const Widget = (props: any) => {
+  const { icon, value, title, subtitle } = props;
+
   return (
     <div className="card-item card-widget">
-      <i className="la la-layer-group" />
+      {icon && <i className={`la ${icon}`} />}
       <div>
-        <span>1.2KB</span>
-        <small>DATASET SIZE </small>
-        <small>Last update: 11-2-2020</small>
+        <span>{value ? value : <SkeletonRow />}</span>
+        <small>{title ? title : <SkeletonRow />} </small>
+        <small>{subtitle ? subtitle : <SkeletonRow />}</small>
       </div>
     </div>
   );

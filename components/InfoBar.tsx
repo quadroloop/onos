@@ -34,7 +34,6 @@ const InfoBar = () => {
 
           {activeTab === "records" && (
             <>
-              <Widget />
               <ItemList />
             </>
           )}
