@@ -22,6 +22,9 @@ module.exports = withFonts(
       env: {
         PRODUCTION: process.env.PRODUCTION,
       },
+      images: {
+        domains: ["localhost"],
+      },
     })
   )
 );

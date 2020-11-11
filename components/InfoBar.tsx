@@ -10,7 +10,7 @@ const InfoBar = () => {
       <div className="info-bar">
         <div className="info-nav">
           <span className="active">Overview</span>
-          <span>Menu</span>
+          <span>Records</span>
           <span>Settings</span>
         </div>
         <div className="content-body">
