@@ -292,6 +292,10 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
     i {
       font-size: 20px;
       color: #42c5ba;
+
+      &.la-chevron-circle-up {
+        display: none;
+      }
     }
 
     &:hover {
@@ -303,9 +307,18 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
 
     &.active {
       background: #314058;
-      border-left: 3px solid #42c5ba;
-      color: #42c5ba;
+      border-left: 10px solid #5cadf0;
+      color: #68c7ec;
       transition: 0.3s;
+
+      i {
+        &.la-chevron-circle-up {
+          display: block;
+        }
+        &.la-chevron-circle-down {
+          display: none;
+        }
+      }
     }
   }
 }

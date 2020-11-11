@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { MapInteractionCSS } from "react-map-interaction";
 import "../styles/dashboard.scss";
+import {
+  gotoRecords,
+  gotoSettings,
+  latest_colored,
+  resetImage,
+} from "./globals";
 import InfoBar from "./InfoBar";
 import Layout from "./layout";
 
@@ -18,9 +24,9 @@ const Dashboard = () => {
           <img src={"/images/onos.svg"} className="onos-logo" />
 
           <div className="sidebar-nav">
-            <i className="la la-map active" />
-            <i className="la la-sliders" />
-            <i className="la la-line-chart" />
+            <i className="la la-map active" onClick={resetImage} />
+            <i className="la la-sliders" onClick={gotoSettings} />
+            <i className="la la-line-chart" onClick={gotoRecords} />
             <a href="https://github.com/quadroloop/onos" target="_blank">
               <i className="la la-github" />
             </a>
@@ -32,9 +38,7 @@ const Dashboard = () => {
         <div className="map-container">
           <MapInteractionCSS maxScale={100} minScale={1}>
             <img
-              src={
-                "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
-              }
+              src={latest_colored}
               id="main-image"
               style={{
                 filter: filterStyle,

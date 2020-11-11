@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Clock from "./Clock";
 import FilterSettings from "./FilterSettings";
 import ItemList from "./ItemList";
-import Widget from "./Widget";
+import Overview from "./Overview";
+import Records from "./Records";
 
 const InfoBar = () => {
   const Tabs = ["overview", "records", "settings"];
@@ -18,6 +18,7 @@ const InfoBar = () => {
                 onClick={() => {
                   setActiveTab(tab);
                 }}
+                id={tab}
               >
                 {tab}
               </span>
@@ -25,16 +26,11 @@ const InfoBar = () => {
           })}
         </div>
         <div className="content-body">
-          {activeTab === "overview" && (
-            <>
-              <Clock />
-              <ItemList />
-            </>
-          )}
+          {activeTab === "overview" && <Overview />}
 
           {activeTab === "records" && (
             <>
-              <ItemList />
+              <Records />
             </>
           )}
 

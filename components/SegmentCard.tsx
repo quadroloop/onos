@@ -1,20 +1,22 @@
-import Image from "./Image";
+import ImageComponent from "./ImageComponent";
+import moment from "moment";
 
-const SegmentCard = () => {
+const SegmentCard = (props: any) => {
+  const { data } = props;
   return (
     <div className="report-segment">
       <div className="segment-header">
         <span className="top-segment">
-          <i className="la la-bullseye" /> 11:30 AM
+          <i className="la la-bullseye" /> {data.time}
         </span>
       </div>
 
-      <Image />
-      <Image />
-      <Image />
+      <ImageComponent src={data.img_colored} mode={"COLORED"} />
+      <ImageComponent src={data.img_ir} mode={"INFRARED"} />
+      <ImageComponent src={data.img_vis} mode={"VISUAL"} />
 
       <div className="segment-header">
-        <span>11:30 AM | End of Segment</span>
+        <span>{data.time} | End of Segment</span>
       </div>
     </div>
   );
