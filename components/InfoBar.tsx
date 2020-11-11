@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Clock from "./Clock";
 import FilterSettings from "./FilterSettings";
 import Image from "./Image";
@@ -5,21 +6,47 @@ import ItemList from "./ItemList";
 import Widget from "./Widget";
 
 const InfoBar = () => {
+  const Tabs = ["overview", "records", "settings"];
+  const [activeTab, setActiveTab] = useState<string>("overview");
   return (
     <>
       <div className="info-bar">
         <div className="info-nav">
-          <span className="active">Overview</span>
-          <span>Records</span>
-          <span>Settings</span>
+          {Tabs.map((tab: any) => {
+            return (
+              <span
+                className={`${tab === activeTab ? "active" : ""}`}
+                onClick={() => {
+                  setActiveTab(tab);
+                }}
+              >
+                {tab}
+              </span>
+            );
+          })}
         </div>
         <div className="content-body">
-          <Clock />
-          <Image />
-          <FilterSettings />
-          <Image />
-          <ItemList />
-          <Widget />
+          {activeTab === "overview" && (
+            <>
+              <Clock />
+              <Image />
+              <Image />
+              <ItemList />
+            </>
+          )}
+
+          {activeTab === "records" && (
+            <>
+              <Widget />
+              <ItemList />
+            </>
+          )}
+
+          {activeTab === "settings" && (
+            <>
+              <FilterSettings />
+            </>
+          )}
         </div>
       </div>
     </>

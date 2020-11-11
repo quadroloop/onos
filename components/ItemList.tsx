@@ -1,33 +1,34 @@
 const ItemList = () => {
   return (
-    <ul className="item-list card-item">
+    <ul className="item-list">
       <li>
         Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
+        <i className="la la-chevron-circle-down" />
+      </li>
+
+      <li>
+        Nov. 1, 2020
+        <i className="la la-chevron-circle-down" />
       </li>
       <li>
         Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
+        <i className="la la-chevron-circle-down" />
       </li>
       <li>
         Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
+        <i className="la la-chevron-circle-down" />
       </li>
       <li>
         Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
+        <i className="la la-chevron-circle-down" />
       </li>
       <li>
         Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
+        <i className="la la-chevron-circle-down" />
       </li>
       <li>
         Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
-      </li>
-      <li>
-        Nov. 1, 2020
-        <i className="la la-chevron-circle-right" />
+        <i className="la la-chevron-circle-down" />
       </li>
     </ul>
   );

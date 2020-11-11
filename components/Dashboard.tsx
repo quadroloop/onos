@@ -1,9 +1,16 @@
+import { useEffect, useState } from "react";
 import { MapInteractionCSS } from "react-map-interaction";
 import "../styles/dashboard.scss";
 import InfoBar from "./InfoBar";
 import Layout from "./layout";
 
 const Dashboard = () => {
+  const [filterStyle, setFilterStyle] = useState<string>();
+
+  useEffect(() => {
+    setFilterStyle(localStorage.filterStyle);
+  }, []);
+
   return (
     <Layout>
       <div className="dashboard-page">
@@ -28,6 +35,10 @@ const Dashboard = () => {
               src={
                 "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif"
               }
+              id="main-image"
+              style={{
+                filter: filterStyle,
+              }}
             />
           </MapInteractionCSS>
         </div>
