@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Clock from "./Clock";
 import FilterSettings from "./FilterSettings";
-import Image from "./Image";
 import ItemList from "./ItemList";
 import Widget from "./Widget";
 
@@ -29,8 +28,6 @@ const InfoBar = () => {
           {activeTab === "overview" && (
             <>
               <Clock />
-              <Image />
-              <Image />
               <ItemList />
             </>
           )}
