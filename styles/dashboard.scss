@@ -214,7 +214,7 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   }
 
   i {
-    font-size: 50px;
+    font-size: 40px;
     margin-right: 20px;
     color: #42c5ba;
   }
@@ -222,6 +222,15 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   div {
     display: flex;
     flex-direction: column;
+  }
+
+  &.danger {
+    border: 1px solid #e94057;
+    border-left: 10px solid #e94057;
+    color: #eb6e7e;
+    i {
+      color: #f15569;
+    }
   }
 }
 
@@ -353,6 +362,8 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   small {
     text-transform: lowercase !important;
     color: #6b6b6b;
+    line-height: 16px;
+    display: block;
   }
 }
 

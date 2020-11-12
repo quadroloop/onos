@@ -16,6 +16,14 @@ const Overview = () => {
   return (
     <>
       <Clock />
+      <p className="text-header">
+        <i className="la la-list" /> Recent Entries
+        <br />
+        <small>
+          List of the most recent weather data snapshots and documented major
+          weather events, grouped by date.
+        </small>
+      </p>
       <ItemList data={overviewData} mode="overview" />
       <button
         className="save-btn"

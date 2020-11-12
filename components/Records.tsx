@@ -13,6 +13,14 @@ const Records = () => {
   }, []);
   return (
     <>
+      <p className="text-header">
+        <i className="la la-list" /> RECORDS
+        <br />
+        <small>
+          List of weather data snapshot and documented major weather events,
+          group by date.
+        </small>
+      </p>
       <ItemList data={recordsData} mode="overview" />
     </>
   );

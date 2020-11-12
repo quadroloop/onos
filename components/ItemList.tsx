@@ -19,15 +19,11 @@ const ItemList = (props: any) => {
     }
   };
 
-  if (data) {
-    toggleTab(data[0].date);
-  }
-
   return (
     <>
       {data && (
         <ul className="item-list">
-          {data.map((item: any) => {
+          {data.map((item: any, index: number) => {
             return (
               <>
                 <li
@@ -35,6 +31,7 @@ const ItemList = (props: any) => {
                   onClick={() => {
                     toggleTab(item.date);
                   }}
+                  className={`${index === 0 ? "active" : ""}`}
                 >
                   {moment(item.date).format("MMM. D, YYYY")}
                   <i className="la la-chevron-circle-down" />
@@ -43,9 +40,9 @@ const ItemList = (props: any) => {
                 <div
                   className="delta"
                   id={`delta-${item.date}`}
-                  style={{ display: "none" }}
+                  style={{ display: `${index === 0 ? "block" : "none"}` }}
                 >
-                  {item.data.map((ss: any) => {
+                  {item.data.reverse().map((ss: any) => {
                     return <SegmentCard data={ss} />;
                   })}
                 </div>
