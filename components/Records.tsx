@@ -18,7 +18,7 @@ const Records = () => {
         <br />
         <small>
           List of weather data snapshot and documented major weather events,
-          group by date.
+          grouped by date.
         </small>
       </p>
       <ItemList data={recordsData} mode="overview" />
