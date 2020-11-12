@@ -225,8 +225,10 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   }
 
   &.danger {
-    border: 1px solid #e94057;
-    border-left: 10px solid #e94057;
+    border-left: 8px solid #e94057;
+    border-right: 8px solid #e94057;
+    box-shadow: 0px 5px 12px -1px rgba(247, 110, 110, 0.164);
+
     color: #eb6e7e;
     i {
       color: #f15569;
@@ -381,5 +383,19 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   &:hover {
     background: #29948b;
     transition: 0.3s;
+  }
+}
+
+.event-data {
+  margin: 10px 0px;
+  li {
+    color: rgb(155, 154, 154);
+    font-size: 12px;
+    display: block;
+
+    span {
+      font-weight: 600;
+      color: #e2aa60;
+    }
   }
 }

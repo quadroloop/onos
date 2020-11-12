@@ -6,7 +6,7 @@ const Records = () => {
   const [recordsData, setData] = useState<any>(null);
 
   useEffect(() => {
-    axios.get("/api/records").then((res: any) => {
+    axios.get("/api/records/all").then((res: any) => {
       let data = res.data.results.reverse();
       setData(data);
     });

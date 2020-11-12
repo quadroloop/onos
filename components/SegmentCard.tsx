@@ -1,5 +1,5 @@
 import ImageComponent from "./ImageComponent";
-// import moment from "moment";
+import moment from "moment";
 import Widget from "./Widget";
 
 const SegmentCard = (props: any) => {
@@ -8,7 +8,10 @@ const SegmentCard = (props: any) => {
     <div className="report-segment">
       <div className="segment-header">
         <span className="top-segment">
-          <i className="la la-bullseye" /> {data.time}
+          <i className="la la-bullseye" />{" "}
+          {`${moment(`${data.date} ${data.time}`).format(
+            "MMM. D YYYY | h:mm:ss A"
+          )}`}
         </span>
       </div>
 
@@ -23,11 +26,51 @@ const SegmentCard = (props: any) => {
       )}
 
       <ImageComponent src={data.img_colored} mode={"COLORED"} />
+
+      {data.type === "event" && (
+        <div className="event-data">
+          <li>
+            <span>Category (JMA Scale):</span> {data.event_type_jma}
+          </li>
+          <li>
+            <span>Category (SSHWS):</span> {data.event_type_sshws}
+          </li>
+          <li>
+            <span>Date Formed:</span>{" "}
+            {moment(data.date_formed).format("MMM. D YYYY")}
+          </li>
+          <li>
+            <span>Date Dissipated:</span> {data.date_dissipated}
+          </li>
+          <li>
+            <span>Highest winds:</span> {data.highest_winds}
+          </li>
+          <li>
+            <span>Lowest Pressure:</span> {data.lowest_pressure}
+          </li>
+          <li>
+            <span>Fatalities:</span> {data.fatalities}
+          </li>
+          <li>
+            <span>Damage:</span> {data.damage}
+          </li>
+          <li>
+            <span>Affected Areas:</span> {data.areas_affected}
+          </li>
+        </div>
+      )}
+
       <ImageComponent src={data.img_ir} mode={"INFRARED"} />
       <ImageComponent src={data.img_vis} mode={"VISUAL"} />
 
       <div className="segment-header">
-        <span>{data.time} | End of Segment</span>
+        <span>
+          {" "}
+          {`${moment(`${data.date} ${data.time}`).format(
+            "MMM. D YYYY | h:mm:ss A"
+          )}`}{" "}
+          | END
+        </span>
       </div>
     </div>
   );

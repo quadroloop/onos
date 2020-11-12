@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MapInteractionCSS } from "react-map-interaction";
 import "../styles/dashboard.scss";
 import {
+  gotoOverview,
   gotoRecords,
   gotoSettings,
   latest_colored,
@@ -24,9 +25,10 @@ const Dashboard = () => {
           <img src={"/images/onos.svg"} className="onos-logo" />
 
           <div className="sidebar-nav">
-            <i className="la la-map active" onClick={resetImage} />
-            <i className="la la-sliders" onClick={gotoSettings} />
+            <i className="la la-map" onClick={resetImage} />
+            <i className="la la-list" onClick={gotoOverview} />
             <i className="la la-line-chart" onClick={gotoRecords} />
+            <i className="la la-sliders" onClick={gotoSettings} />
             <a href="https://github.com/quadroloop/onos" target="_blank">
               <i className="la la-github" />
             </a>

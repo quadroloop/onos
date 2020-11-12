@@ -12,6 +12,13 @@ export const gotoSettings = () => {
   }
 };
 
+export const gotoOverview = () => {
+  let link: any = document.getElementById("overview");
+  if (link) {
+    link.click();
+  }
+};
+
 export const latest_colored =
   "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif";
 

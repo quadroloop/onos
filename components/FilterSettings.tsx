@@ -3,6 +3,7 @@ import ReactSlider from "react-slider";
 import Widget from "./Widget";
 import axios from "axios";
 import moment from "moment";
+import numeral from "numeral";
 
 const filterDefaults = () => {
   let defaults = {
@@ -60,7 +61,7 @@ const FilterSettings = () => {
       </p>
 
       <Widget
-        value={info && info.dataset_size}
+        value={info && numeral(info.dataset_size).format("0.0b")}
         icon={"la-layer-group"}
         title={"DATASET SIZE"}
         subtitle={
