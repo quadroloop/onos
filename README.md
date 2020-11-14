@@ -4,6 +4,11 @@
 
 > A progressive weather watch system made to record major weather events in the Philippines.
 
+### Project Goals
+
+- Collect enough information about Storms in the philippines for future analysis.
+- Keep an open dataset about Storms in the philippines.
+
 ### Sources
 
 http://bagong.pagasa.dost.gov.ph/
