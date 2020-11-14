@@ -7,7 +7,7 @@
 ### Project Goals
 
 - Collect enough information about Storms in the philippines for future analysis.
-- Keep an open dataset about Storms in the philippines.
+- Keep an open dataset about such storms.
 
 ### Sources
 
