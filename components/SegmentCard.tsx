@@ -25,7 +25,11 @@ const SegmentCard = (props: any) => {
         />
       )}
 
-      <ImageComponent src={data.img_colored} mode={"COLORED"} />
+      <ImageComponent
+        src={data.img_colored}
+        mode={"COLORED"}
+        date={data.date}
+      />
 
       {data.type === "event" && (
         <div className="event-data">
@@ -40,7 +44,8 @@ const SegmentCard = (props: any) => {
             {moment(data.date_formed).format("MMM. D YYYY")}
           </li>
           <li>
-            <span>Date Dissipated:</span> {data.date_dissipated}
+            <span>Date Dissipated:</span>{" "}
+            {moment(data.date_dissipated).format("MMM. D YYYY")}
           </li>
           <li>
             <span>Highest winds:</span> {data.highest_winds}
@@ -60,8 +65,8 @@ const SegmentCard = (props: any) => {
         </div>
       )}
 
-      <ImageComponent src={data.img_ir} mode={"INFRARED"} />
-      <ImageComponent src={data.img_vis} mode={"VISUAL"} />
+      <ImageComponent src={data.img_ir} mode={"INFRARED"} date={data.date} />
+      <ImageComponent src={data.img_vis} mode={"VISUAL"} date={data.date} />
 
       <div className="segment-header">
         <span>

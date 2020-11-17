@@ -1,25 +1,43 @@
 import Image from "next/image";
+import { setImageInfo } from "./globals";
 
 const ImageComponent = (props: any) => {
-  const { src, mode, subtitle } = props;
+  const { src, mode, subtitle, date } = props;
 
-  const setMainImage = () => {
+  const setMainImage = (id: string) => {
     let imgSRC = src;
+    let activeImage: any = document.querySelectorAll(".active-image");
+    let currentImage = document.getElementById(id);
+
+    if (activeImage.length > 0) {
+      activeImage[0].classList.remove("active-image");
+      currentImage.classList.add("active-image");
+    } else {
+      currentImage.classList.add("active-image");
+    }
     let mainImage: any = document.getElementById("main-image");
+    setImageInfo(mode, date);
+
     mainImage.src = imgSRC;
   };
+
+  let imageId = src.split("/").pop();
 
   return (
     <>
       {src && (
-        <div className="image-widget card-item">
+        <div className="image-widget card-item" id={imageId}>
           <small>
             <i className="la la-cube" />{" "}
             <span className="text-warning">MTSAT {mode}:</span>{" "}
             {subtitle ? subtitle : "HIMAWARI-8"}
           </small>
           <Image src={src} alt="image-component" width="350" height="280" />
-          <button onClick={setMainImage}>
+          <button
+            onClick={() => {
+              setMainImage(imageId);
+            }}
+          >
             <i className="la la-crosshairs" /> Select
           </button>
         </div>

@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const gotoRecords = () => {
   let link: any = document.getElementById("records");
   if (link) {
@@ -27,4 +29,16 @@ export const resetImage = () => {
   if (mainImage) {
     mainImage.src = latest_colored;
   }
+};
+
+export const setImageInfo = (title: string, date: string) => {
+  let infoTab: any = document.getElementById("image-info");
+  let infoTemplate = `
+  <span>
+    <i class="la la-crop text-warning"></i> <strong>${title}</strong> |
+    ${moment(date).format("MMM. D, YYYY")} (${moment(date).fromNow()})
+  </span>
+  `;
+
+  infoTab.innerHTML = infoTemplate;
 };

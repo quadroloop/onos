@@ -7,11 +7,13 @@ import {
   gotoSettings,
   latest_colored,
   resetImage,
+  setImageInfo,
 } from "./globals";
 import InfoBar from "./InfoBar";
 import Layout from "./layout";
 import nprogress from "nprogress";
 import ImageInfo from "./ImageInfo";
+import moment from "moment";
 
 const Dashboard = () => {
   const [filterStyle, setFilterStyle] = useState<string>();
@@ -27,6 +29,7 @@ const Dashboard = () => {
 
   const viewLatest = () => {
     nprogress.start();
+    setImageInfo("LATEST", `${moment().format("MM-DD-YYYY")}`);
     resetImage();
   };
 

@@ -1,9 +1,9 @@
 const ImageInfo = () => {
   return (
-    <div className="image-info-tab">
+    <div className="image-info-tab" id="image-info">
       <span>
-        <i className="la la-crop text-warning" /> <strong>INFRARED</strong> |
-        November 17, 2020 (3 days ago)
+        <i className="la la-bullseye text-warning" />{" "}
+        <strong>LATEST IMAGE</strong>
       </span>
     </div>
   );
