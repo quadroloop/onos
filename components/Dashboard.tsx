@@ -11,6 +11,7 @@ import {
 import InfoBar from "./InfoBar";
 import Layout from "./layout";
 import nprogress from "nprogress";
+import ImageInfo from "./ImageInfo";
 
 const Dashboard = () => {
   const [filterStyle, setFilterStyle] = useState<string>();
@@ -33,6 +34,11 @@ const Dashboard = () => {
     nprogress.done();
   };
 
+  const imageError = () => {
+    nprogress.done();
+    alert("failed to load image");
+  };
+
   return (
     <Layout>
       <div className="dashboard-page">
@@ -51,6 +57,7 @@ const Dashboard = () => {
         </div>
 
         <InfoBar />
+        <ImageInfo />
 
         <div className="map-container">
           <MapInteractionCSS maxScale={100} minScale={1}>
@@ -61,6 +68,7 @@ const Dashboard = () => {
                 filter: filterStyle,
               }}
               onLoad={imageLoaded}
+              onError={imageError}
             />
           </MapInteractionCSS>
         </div>
