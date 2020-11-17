@@ -66,7 +66,9 @@ const FilterSettings = () => {
         title={"DATASET SIZE"}
         subtitle={
           info &&
-          `Last updated: ${moment(info.last_update).format("MMM D, YYYY")}`
+          `Last updated: ${moment(info.last_updated).format(
+            "MMM D, YYYY"
+          )} (${moment(info.last_updated).fromNow()})`
         }
       />
 

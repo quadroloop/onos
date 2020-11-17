@@ -34,6 +34,7 @@ const ItemList = (props: any) => {
                   className={`${index === 0 ? "active" : ""}`}
                 >
                   {moment(item.date).format("MMM. D, YYYY")}
+                  {/* ({moment(item.date).fromNow()} ) */}
                   <i className="la la-chevron-circle-down" />
                   <i className="la la-chevron-circle-up" />
                 </li>
