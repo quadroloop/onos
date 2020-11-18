@@ -22,6 +22,10 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   color: rgb(218, 157, 44);
 }
 
+.text-active {
+  color: rgb(90, 202, 197);
+}
+
 .onos-sidebar {
   position: fixed;
   left: 10px;
@@ -399,7 +403,7 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
 
     span {
       font-weight: 600;
-      color: #e2aa60;
+      color: #ec8c85;
     }
   }
 }
@@ -424,7 +428,7 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
     top: -2px;
 
     strong {
-      // color: #68c7ec;
+      color: #68b1ec;
     }
   }
 }

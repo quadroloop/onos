@@ -35,7 +35,7 @@ export const setImageInfo = (title: string, date: string) => {
   let infoTab: any = document.getElementById("image-info");
   let infoTemplate = `
   <span>
-    <i class="la la-crop text-warning"></i> <strong>${title}</strong> |
+    <i class="la la-bullseye text-active"></i> <strong>${title}</strong> |
     ${moment(date).format("MMM. D, YYYY")} (${moment(date).fromNow()})
   </span>
   `;
