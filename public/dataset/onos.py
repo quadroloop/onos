@@ -138,7 +138,10 @@ def purgeDataset():
 
 def fetchImage(url,file_name):
   print('Fetching latest image from: '+ url)
-  urllib.request.urlretrieve(url, file_name)
+  # urllib.request.urlretrieve(url, file_name)
+
+  # replaced urlib with wget
+  os.system("wget -O "+file_name+" "+url)
   print("snapshot image saved ==> "+CGREEN2+file_name+CEND)
 
 
