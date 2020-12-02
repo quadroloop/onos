@@ -430,3 +430,53 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
     }
   }
 }
+
+// current image modes
+
+.current-image-modes {
+  position: fixed;
+  display: flex;
+  bottom: 10px;
+  right: 310px;
+  z-index: 100;
+
+  .image-box {
+    $size: 80px;
+    height: auto;
+    width: $size;
+    padding: 5px 5px 5px;
+    background: rgba(0, 0, 0, 0.562);
+    margin-left: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    // filter: grayscale(70%);
+    transition: 0.3s;
+
+    small {
+      color: #fff;
+      font-size: 10px;
+      text-transform: uppercase;
+      display: none;
+
+      i {
+        color: #68c7ec;
+      }
+    }
+
+    img {
+      height: auto;
+      object-fit: contain;
+    }
+
+    &:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.774);
+
+      small {
+        display: block;
+      }
+
+      transition: 0.3s;
+    }
+  }
+}

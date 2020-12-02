@@ -24,6 +24,13 @@ export const gotoOverview = () => {
 export const latest_colored =
   "https://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif";
 
+export const img_colored =
+  "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/latest-him-colored.gif";
+export const img_irbig =
+  "http://src.meteopilipinas.gov.ph/repo/himawari/24hour/irbig/latestHIM_irbig.gif";
+export const img_vis =
+  "http://src.meteopilipinas.gov.ph/repo/himawari/24hour/visbig/latestHIM_visbig.gif";
+
 export const resetImage = () => {
   let mainImage: any = document.getElementById("main-image");
   if (mainImage) {
