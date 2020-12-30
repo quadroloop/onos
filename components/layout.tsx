@@ -15,6 +15,7 @@ export default function Layout({ children }) {
         />
         <meta property="og:image" content={`/images/onos-logo.png`} />
         <meta name="og:title" content={siteTitle} />
+        <meta name="theme-color" content="#000000" />
         <meta name="twitter:card" content="summary_large_image" />
         <link
           rel="stylesheet"
