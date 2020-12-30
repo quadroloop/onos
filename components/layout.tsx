@@ -17,6 +17,7 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="theme-color" content="#000000" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <link
           rel="stylesheet"
           href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
