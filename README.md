@@ -1,13 +1,18 @@
-[![core-banner](https://i.ibb.co/5MGxPwF/Screen-Shot-2020-11-13-at-6-00-33-AM.png)]()
+[![onos-banner](https://i.ibb.co/5MGxPwF/Screen-Shot-2020-11-13-at-6-00-33-AM.png)]()
 
 # ONOS
 
 > A progressive weather watch system made to record major weather events in the Philippines.
 
+### Demo
+
+https://onos.vercel.app
+
 ### Project Goals
 
 - Collect enough information about Storms in the philippines for future analysis.
 - Keep an open dataset about such storms.
+- Use Machine Learning to automatically detect and classify weather events based on the collected sattelite images.
 
 ### Sources
 

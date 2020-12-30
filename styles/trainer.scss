@@ -1,0 +1,39 @@
+body {
+  background: #000;
+}
+
+.trainer-page {
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  margin: 0px;
+  padding: 10px 30px;
+  color: #fff;
+  top: 0px;
+}
+
+.heading-text {
+  font-weight: 100;
+  color: #fff;
+}
+
+.trainer-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .container {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.classifications {
+  list-style: none;
+  padding-left: 0px;
+
+  li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+  }
+}
