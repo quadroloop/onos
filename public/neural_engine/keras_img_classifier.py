@@ -8,6 +8,10 @@ from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as K
 
 
+# model name
+onos_model_name = "onos_nn_v0.1.h5"
+
+
 # dimensions of our images.
 img_width, img_height = 150, 150
 
@@ -77,4 +81,4 @@ model.fit_generator(
     validation_data=validation_generator,
     validation_steps=nb_validation_samples // batch_size)
 
-model.save_weights('first_try.h5')
+model.save_weights(onos_model_name)
