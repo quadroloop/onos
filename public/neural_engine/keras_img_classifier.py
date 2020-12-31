@@ -15,8 +15,8 @@ img_width, img_height = 150, 150
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-nb_train_samples = 2000
-nb_validation_samples = 800
+nb_train_samples = 18
+nb_validation_samples = 18
 epochs = 50
 batch_size = 16
 
@@ -71,6 +71,7 @@ validation_generator = test_datagen.flow_from_directory(
     target_size=(img_width, img_height),
     batch_size=batch_size,
     class_mode='binary')
+
 
 model.fit(
     train_generator,
