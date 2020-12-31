@@ -4,6 +4,8 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as K
+import tensorflowjs as tfjs
+
 
 
 # model name
@@ -81,3 +83,6 @@ model.fit(
     validation_steps=nb_validation_samples // batch_size)
 
 model.save_weights(onos_model_name)
+
+# save model for Keras tensorflowJS
+tfjs.converters.save_keras_model(model, "./")
