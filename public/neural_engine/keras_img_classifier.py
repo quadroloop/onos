@@ -1,5 +1,5 @@
 
-// WIP: Image classfier from scratch... need to create a dataset creator and validator
+# WIP: Image classfier from scratch... need to create a dataset creator and validator
 
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential

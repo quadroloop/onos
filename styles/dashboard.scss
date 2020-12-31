@@ -434,7 +434,8 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   box-shadow: 0px 3px 12px -1px rgba(27, 23, 23, 0.774);
 
   @media (max-width: 600px) {
-    display: none;
+    // display: none;
+    right: 20px;
   }
 
   span {
