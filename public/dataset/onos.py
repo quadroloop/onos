@@ -99,6 +99,8 @@ def help():
   print(CYELLOW+"-ds"+CEND+" : Document Event. Create documentation for a major weather event")
   print(CYELLOW+"--backup"+CEND+" : Create a backup for the dataset directory")
   print(CYELLOW+"--purge-dataset"+CEND+" : Reset dataset.")
+  print(CYELLOW+"--ad [URL] [Classification]"+CEND+" : Add image data via URL")
+  print(CYELLOW+"--adc [Classification]"+CEND+" : Add current satellite image to image dataset.")
 
 
 def splash():
@@ -261,6 +263,76 @@ def documentEvent():
   # write to DB
   writetoDB(db)
 
+# data to training data:
+
+def addManualTrainingData():
+
+  snapshot_id =  str(uuid.uuid4());
+
+
+  print(CYELLOW2+"Adding to training data..."+CEND)
+  print(CYELLOW+"Date: "+CEND+str(date_now.date()))
+
+  colored_sat_image = "cl-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
+  converted_sat_image = "cl-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".jpg";
+
+
+  if len(args) == 4 :
+   print("Arguments: OK!")
+   print(CYELLOW2+"Image URL: "+CEND+args[2])
+   print(CYELLOW+"Classification: "+CEND+args[3])
+   os.system("wget -O ../neural_engine/data/train/"+args[3]+"/"+colored_sat_image+" "+args[2])
+
+  # BETA: MacOS only convert gif files to jpg files.
+   print(CGREENBG+"BETA: IMAGE CONVERSION (Mac OS)"+CEND)
+   os.system("sips -s format jpeg ../neural_engine/data/train/"+args[3]+"/*.gif --out ../neural_engine/data/train/"+args[3]+"/"+converted_sat_image)
+
+  # remove exisiting gif files
+   print(CGREENBG+"BETA: GIF IMAGE DELETION (Mac OS)"+CEND)
+   os.system("rm -rf ../neural_engine/data/train/"+args[3]+"/*.gif")
+
+   # copy file to validation folder
+   print(CGREENBG+"BETA: COPYING IMAGE TO VALIDATION DATA DIRECTORY (Mac OS)"+CEND)
+   os.system("cp ../neural_engine/data/train/"+args[3]+"/"+converted_sat_image+" "+"../neural_engine/data/validation/"+args[3]+"/"+converted_sat_image)
+   print("training image saved ==> "+CGREEN+colored_sat_image+CEND)
+  else:
+   print(CRED2+"Error: Incomplete Arguments provided `onos.py --ad [URL] [classification]`"+CEND)
+
+
+# auto add current image to traning data
+def addCurrentImageToTraningData():
+
+  snapshot_id =  str(uuid.uuid4());
+
+
+  print(CYELLOW2+"Adding to training data..."+CEND)
+  print(CYELLOW+"Date: "+CEND+str(date_now.date()))
+
+  colored_sat_image = "cl-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".gif";
+  converted_sat_image = "cl-"+snapshot_id+"-"+str(date_now).replace(" ","-")+".jpg";
+
+
+  if len(args) == 3 :
+   print("Arguments: OK!")
+   print(CYELLOW2+"Image URL: "+CEND+img_colored)
+   print(CYELLOW+"Classification: "+CEND+args[2])
+   os.system("wget -O ../neural_engine/data/train/"+args[2]+"/"+colored_sat_image+" "+img_colored)
+
+  # BETA: MacOS only convert gif files to jpg files.
+   print(CGREENBG+"BETA: IMAGE CONVERSION (Mac OS)"+CEND)
+   os.system("sips -s format jpeg ../neural_engine/data/train/"+args[2]+"/*.gif --out ../neural_engine/data/train/"+args[2]+"/"+converted_sat_image)
+
+  # remove exisiting gif files
+   print(CGREENBG+"BETA: GIF IMAGE DELETION (Mac OS)"+CEND)
+   os.system("rm -rf ../neural_engine/data/train/"+args[2]+"/*.gif")
+
+   # copy file to validation folder
+   print(CGREENBG+"BETA: COPYING IMAGE TO VALIDATION DATA DIRECTORY (Mac OS)"+CEND)
+   os.system("cp ../neural_engine/data/train/"+args[2]+"/"+converted_sat_image+" "+"../neural_engine/data/validation/"+args[2]+"/"+converted_sat_image)
+   print("training image saved ==> "+CGREEN+colored_sat_image+CEND)
+  else:
+   print(CRED2+"Error: Incomplete Arguments provided `onos.py --adc [classification]`"+CEND)
+
 
 # show splash
 splash()
@@ -284,5 +356,14 @@ if "--purge-dataset" in args:
 # create backup
 if "--backup" in args:
   createBackUp()
+
+# add to training dataset manual classification
+if "--ad" in args:
+  addManualTrainingData()
+
+# add current sat image to dataset classification
+
+if "--adc" in args:
+ addCurrentImageToTraningData()
 
 
