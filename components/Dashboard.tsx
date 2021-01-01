@@ -16,6 +16,9 @@ import ImageInfo from "./ImageInfo";
 import moment from "moment";
 import CurrentImageModes from "./CurrentImageModes";
 
+// testing tensorflow model
+import * as tf from "@tensorflow/tfjs";
+
 const Dashboard = () => {
   const [filterStyle, setFilterStyle] = useState<string>();
 
@@ -26,6 +29,25 @@ const Dashboard = () => {
     setTimeout(() => {
       nprogress.done();
     }, 10000);
+
+    async function delta() {
+      const model = await tf.loadLayersModel("/neural_engine/model.json");
+
+      let image_data: any = document.getElementById("main-image");
+
+      let nData = tf.browser.fromPixels(image_data);
+      const smalImg = tf.image.resizeBilinear(nData, [271, 375]);
+      const resized = tf.cast(smalImg, "float32");
+      const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 271, 375, 3]);
+
+      const prediction = model.predict(t4d) as tf.Tensor;
+
+      console.log("tada==>", prediction.dataSync());
+    }
+
+    // document.body.onkeyup = () => {
+    //   delta();
+    // };
   }, []);
 
   const viewLatest = () => {
@@ -74,6 +96,7 @@ const Dashboard = () => {
               }}
               onLoad={imageLoaded}
               onError={imageError}
+              // crossOrigin="anonymous"
             />
           </MapInteractionCSS>
         </div>

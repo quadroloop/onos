@@ -16,7 +16,6 @@ const Overview = () => {
 
     axios.get("/api/records/major_events").then((res: any) => {
       let data = res.data.results[0];
-      console.log(data);
       let recentEvent = [{ date: data.date, data: [data] }];
       setrecentEvent(recentEvent);
     });

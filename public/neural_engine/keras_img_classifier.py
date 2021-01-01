@@ -13,12 +13,12 @@ onos_model_name = "onos_nn_v0.1.h5"
 
 
 # dimensions of our images.
-img_width, img_height = 150, 150
+img_width, img_height = 271, 375
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
 nb_train_samples = 19
-nb_validation_samples = 19
+nb_validation_samples = 5
 epochs = 50
 batch_size = 16
 
@@ -44,8 +44,10 @@ model.add(Flatten())
 model.add(Dense(64))
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
-model.add(Dense(1))
+# model.add(Dense(1))
+model.add(Dense(1, activation='softmax'))
 model.add(Activation('sigmoid'))
+
 
 model.compile(loss='binary_crossentropy',
               optimizer='rmsprop',
