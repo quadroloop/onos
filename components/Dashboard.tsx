@@ -36,13 +36,13 @@ const Dashboard = () => {
       let image_data: any = document.getElementById("main-image");
 
       let nData = tf.browser.fromPixels(image_data);
-      const smalImg = tf.image.resizeBilinear(nData, [271, 375]);
+      const smalImg = tf.image.resizeBilinear(nData, [150, 150]);
       const resized = tf.cast(smalImg, "float32");
-      const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 271, 375, 3]);
+      const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 150, 150, 3]);
 
       const prediction = model.predict(t4d) as tf.Tensor;
 
-      console.log("tada==>", prediction.dataSync());
+      console.log("Prediction ==>", prediction.dataSync());
     }
 
     // document.body.onkeyup = () => {

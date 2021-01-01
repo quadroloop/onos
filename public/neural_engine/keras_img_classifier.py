@@ -13,12 +13,12 @@ onos_model_name = "onos_nn_v0.1.h5"
 
 
 # dimensions of our images.
-img_width, img_height = 271, 375
+img_width, img_height = 150, 150
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-nb_train_samples = 19
-nb_validation_samples = 5
+nb_train_samples = 20
+nb_validation_samples = 20
 epochs = 50
 batch_size = 16
 
