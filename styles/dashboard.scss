@@ -138,9 +138,17 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
 
 .map-container {
   height: 100vh;
+  width: 100%;
+  display: grid;
 
   img {
     filter: contrast(130%) opacity(70%);
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 750px) {
+      transform: translateY(22%);
+    }
   }
 }
 
