@@ -1,5 +1,5 @@
 cd ./public/dataset/
-python onos.py --adc lpa
+python3 onos.py --adc lpa
 cd ..
 cd ..
 git status

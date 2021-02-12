@@ -1,5 +1,5 @@
 cd ./public/dataset/
-python onos.py --adc normal
+python3 onos.py --adc normal
 cd ..
 cd ..
 git add .

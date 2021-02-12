@@ -1,5 +1,5 @@
 cd ./public/dataset/
-python onos.py --adc typhoon
+python3 onos.py --adc typhoon
 cd ..
 cd ..
 git add .
