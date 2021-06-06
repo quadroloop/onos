@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { setImageInfo } from "./globals";
 
 const ImageComponent = (props: any) => {
@@ -32,7 +31,13 @@ const ImageComponent = (props: any) => {
             <span className="text-warning">MTSAT {mode}:</span>{" "}
             {subtitle ? subtitle : "HIMAWARI-8"}
           </small>
-          <Image src={src} alt="image-component" width="350" height="280" />
+          <img
+            src={src}
+            alt="image-component"
+            className="image-item"
+            width="350"
+            height="280"
+          />
           <button
             onClick={() => {
               setMainImage(imageId);

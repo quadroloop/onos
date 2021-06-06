@@ -1,5 +1,5 @@
 $sidebar-header-color: #323946;
-$bg-primary: #252831;
+$bg-primary: #21242b;
 $endless-river: linear-gradient(to left, #43cea2, #185a9d);
 $wire-tap: linear-gradient(to right, #8a2387, #e94057, #f27121);
 $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
@@ -510,4 +510,8 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
       transition: 0.3s;
     }
   }
+}
+
+.image-item {
+  object-fit: cover;
 }
