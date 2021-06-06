@@ -1,0 +1,7 @@
+File from: [./public/neural_engine/data/train/*/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}]
+
+File to: [-]
+
+Compression algorithm: [-]
+
+Description:  Directory is empty!: 

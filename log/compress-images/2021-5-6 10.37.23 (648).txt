@@ -1,0 +1,7 @@
+File from: [./public/neural_engine/data/train/lpa/cl-032fbd61-0618-4775-ab79-6769f6228785-2020-12-31-20:33:50.884138.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-032fbd61-0618-4775-ab79-6769f6228785-2020-12-31-20:33:50.884138.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!

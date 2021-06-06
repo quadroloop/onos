@@ -1,0 +1,127 @@
+File from: [./public/neural_engine/data/train/lpa/cl-343f7989-9a5d-4b93-a663-59286bdf2414-2020-12-31-20:17:33.090276.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-343f7989-9a5d-4b93-a663-59286bdf2414-2020-12-31-20:17:33.090276.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-38416486-07f8-4b79-9c53-172848c36e5d-2020-12-31-20:24:07.565465.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-38416486-07f8-4b79-9c53-172848c36e5d-2020-12-31-20:24:07.565465.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-3c456719-35b3-49a1-91a4-61debd93d15b-2020-12-31-20:27:23.104820.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-3c456719-35b3-49a1-91a4-61debd93d15b-2020-12-31-20:27:23.104820.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-48f889d8-83ad-4640-bcda-d3e0a444c5ec-2021-02-22-12:01:11.621892.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-48f889d8-83ad-4640-bcda-d3e0a444c5ec-2021-02-22-12:01:11.621892.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-4a459102-459e-485c-b98d-0c6d0f7ba0ad-2021-06-03-09:55:29.523323.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-4a459102-459e-485c-b98d-0c6d0f7ba0ad-2021-06-03-09:55:29.523323.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-4accea6d-e482-4738-b3a4-c59163b33b83-2021-06-02-19:50:47.487827.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-4accea6d-e482-4738-b3a4-c59163b33b83-2021-06-02-19:50:47.487827.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-4efdbd5c-8074-4ca5-8aa3-88ef4b86df9a-2021-01-14-12:07:15.849650.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-4efdbd5c-8074-4ca5-8aa3-88ef4b86df9a-2021-01-14-12:07:15.849650.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-53f8fc15-acef-4691-b0d3-4a8d90cc2522-2021-02-21-09:07:28.082392.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-53f8fc15-acef-4691-b0d3-4a8d90cc2522-2021-02-21-09:07:28.082392.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-6b5239e8-1ee4-4ba8-84bd-03cf409945b4-2021-02-19-21:50:55.541415.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-6b5239e8-1ee4-4ba8-84bd-03cf409945b4-2021-02-19-21:50:55.541415.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-727b82c5-0d32-46a6-9ea4-7510fc56bc46-2021-01-02-05:50:03.500898.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-727b82c5-0d32-46a6-9ea4-7510fc56bc46-2021-01-02-05:50:03.500898.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-728e1c7d-889b-4540-b7ad-030af601445a-2021-01-21-19:01:18.129935.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-728e1c7d-889b-4540-b7ad-030af601445a-2021-01-21-19:01:18.129935.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-890ed0e4-3da5-422a-87c5-c9ef790c2d5e-2021-06-04-20:46:18.378549.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-890ed0e4-3da5-422a-87c5-c9ef790c2d5e-2021-06-04-20:46:18.378549.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-96133ec1-7252-42c4-af3b-5b57927c284b-2021-01-11-19:00:03.423448.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-96133ec1-7252-42c4-af3b-5b57927c284b-2021-01-11-19:00:03.423448.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-aa3537be-3707-477c-b99e-58bb53133d7c-2021-01-08-10:15:49.593409.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-aa3537be-3707-477c-b99e-58bb53133d7c-2021-01-08-10:15:49.593409.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-80069829-bd3d-4b89-bf34-356b7b7f5b4c-2021-04-18-17:59:10.096687.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-80069829-bd3d-4b89-bf34-356b7b7f5b4c-2021-04-18-17:59:10.096687.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-bc68df05-70a7-44f9-b316-3276f27d2b91-2021-01-19-10:28:42.203522.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-bc68df05-70a7-44f9-b316-3276f27d2b91-2021-01-19-10:28:42.203522.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-c2c653a6-9b85-4f11-82a7-32b7085a2c51-2020-12-31-20:34:33.507779.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-c2c653a6-9b85-4f11-82a7-32b7085a2c51-2020-12-31-20:34:33.507779.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-c491a96c-c67e-45ba-94c4-76a569cab946-2021-01-20-21:35:18.057304.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-c491a96c-c67e-45ba-94c4-76a569cab946-2021-01-20-21:35:18.057304.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-c5d2811b-97b4-43ba-8de1-a61b3b36a457-2021-01-03-11:22:25.249770.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-c5d2811b-97b4-43ba-8de1-a61b3b36a457-2021-01-03-11:22:25.249770.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-ce886c9c-8773-4a7e-89ed-ef4889800521-2021-04-15-21:33:53.517645.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-ce886c9c-8773-4a7e-89ed-ef4889800521-2021-04-15-21:33:53.517645.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!File from: [./public/neural_engine/data/train/lpa/cl-b2404d53-318a-4f7e-9c91-94c88dd9d22e-2021-03-10-12:17:01.436561.jpg]
+
+File to: [./public/neural_engine/data/train-compressed/lpa/cl-b2404d53-318a-4f7e-9c91-94c88dd9d22e-2021-03-10-12:17:01.436561.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!
