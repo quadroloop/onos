@@ -89,14 +89,16 @@ const Dashboard = () => {
         <div className="map-container">
           <MapInteractionCSS maxScale={100} minScale={1}>
             <img
-              src={latest_colored}
+              src={
+                "http://localhost:3000/dataset/cl-ea7195db-4b2c-4649-b6d7-eb9c01872428-2021-04-19-18:05:00.738360.gif"
+              }
               id="main-image"
               style={{
                 filter: filterStyle,
               }}
               onLoad={imageLoaded}
               onError={imageError}
-              // crossOrigin="anonymous"
+              crossOrigin="anonymous"
             />
           </MapInteractionCSS>
         </div>

@@ -3,6 +3,7 @@ import ItemList from "./ItemList";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { gotoRecords } from "./globals";
+import Analysis from "./Analysis";
 
 const Overview = () => {
   const [overviewData, setData] = useState<any>(null);
@@ -24,6 +25,7 @@ const Overview = () => {
     <>
       <Clock />
       <span className="text-header">
+        <Analysis />
         <i className="la la-list" /> Recent Major Event
         <br />
         <small>Most resent major weather event.</small>
