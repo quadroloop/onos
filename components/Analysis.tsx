@@ -15,7 +15,7 @@ const Analysis = () => {
 
   const predict = async () => {
     const predictions = await model.predict(
-      document.getElementById("main-image")
+      document.getElementById("image_canvas")
     );
     console.log(predictions);
   };

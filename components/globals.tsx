@@ -49,3 +49,24 @@ export const setImageInfo = (title: string, date: string) => {
 
   infoTab.innerHTML = infoTemplate;
 };
+
+export const ImageToCanvas = () => {
+  // Get the canvas element and set the dimensions.
+  var canvas: any = document.getElementById("image_canvas");
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  // Get a 2D context.
+  var ctx = canvas.getContext("2d");
+
+  // create new image object to use as pattern
+  let imgMain: any = document.getElementById("main-image");
+  var img = new Image();
+  img.src = imgMain.src;
+  img.onload = function () {
+    // Create pattern and don't repeat!
+    var ptrn = ctx.createPattern(img, "no-repeat");
+    ctx.fillStyle = ptrn;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  };
+};

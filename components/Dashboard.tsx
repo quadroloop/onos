@@ -5,6 +5,7 @@ import {
   gotoOverview,
   gotoRecords,
   gotoSettings,
+  ImageToCanvas,
   latest_colored,
   resetImage,
   setImageInfo,
@@ -94,11 +95,15 @@ const Dashboard = () => {
               style={{
                 filter: filterStyle,
               }}
-              onLoad={imageLoaded}
+              onLoad={() => {
+                imageLoaded();
+                ImageToCanvas();
+              }}
               onError={imageError}
               // crossOrigin="anonymous"
             />
           </MapInteractionCSS>
+          <canvas id="image_canvas" />
         </div>
       </div>
     </Layout>

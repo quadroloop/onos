@@ -516,3 +516,9 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   object-fit: cover;
   filter: brightness(120%) contrast(120%) hue-rotate(40deg);
 }
+
+// image canvas
+
+#image_canvas {
+  display: none;
+}
