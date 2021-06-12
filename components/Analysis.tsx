@@ -30,7 +30,7 @@ const Analysis = () => {
 
   return (
     <>
-      <div className="analysis-component d-none">
+      <div className="analysis-component" style={{ display: "none" }}>
         Analysis
         <br />
         <button onClick={predict}>Predict</button>
