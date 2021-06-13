@@ -522,3 +522,84 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
 #image_canvas {
   display: none;
 }
+
+.analysis-component {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  background: $sidebar-header-color;
+  margin: 5px 0px 10px;
+
+  .item-header {
+    padding: 4px 10px;
+    border-bottom: 0.3px solid rgba(121, 119, 119, 0.555);
+
+    i {
+      color: rgb(90, 202, 197);
+    }
+  }
+
+  #current-delta-img {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+    filter: contrast(120%);
+  }
+
+  .main-predictions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+
+    .result {
+      display: flex;
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      color: #fff;
+      border: 0.3px solid rgba(116, 110, 110, 0.493);
+      margin-bottom: 5px;
+      background: rgba(49, 45, 45, 0.568);
+
+      span {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 100;
+        left: 10px;
+        top: 5px;
+      }
+
+      &.top-result {
+        border: none;
+
+        span {
+          font-weight: 700;
+        }
+
+        .icon-wrapper {
+          $size: 30px;
+          height: $size;
+          width: $size;
+          display: grid;
+          border: 2px solid #fff;
+          border-radius: 100%;
+
+          i {
+            margin: auto;
+            font-size: 20px;
+          }
+        }
+
+        padding: 10px 15px;
+        background: linear-gradient(
+            to right,
+            rgba(90, 190, 90, 0.877),
+            rgba(68, 128, 151, 0.938)
+          ),
+          url("/current.gif") center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

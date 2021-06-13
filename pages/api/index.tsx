@@ -1,26 +1,26 @@
 import { latest_colored } from "../../components/globals";
 import dataset from "../../public/dataset/dataset.json";
 import dataset_info from "../../public/dataset/dataset_info.json";
-const fs = require("fs");
 import wget from "node-wget";
+const path = require("path");
 
-async function download() {
+// using wget to fetch the file from src.meteopilipinas.gov
+async function downloadSatImage() {
   await wget(
     {
-      url: latest_colored,
-      dest: "./public/",
+      url:
+        "http://src.meteopilipinas.gov.ph/repo/mtsat-colored/24hour/1-him-colored-fs8.png",
+      dest: path.resolve("./public/current.gif"),
     },
     function (err, data) {
-      // data: { headers:{...}, filepath:'...' }
       console.log("--- dry run data:");
-      console.log(data); // '/tmp/package.json'
+      console.log(data);
     }
   );
 }
 
-download();
-
 export default async (req, res) => {
+  await downloadSatImage();
   res.status(200).json({
     message: "Onos API v1",
     info: dataset_info,

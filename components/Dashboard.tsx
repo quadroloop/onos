@@ -88,7 +88,7 @@ const Dashboard = () => {
 
         <InfoBar />
         <ImageInfo />
-        <CurrentImageModes />
+        {/* <CurrentImageModes /> */}
 
         <div className="map-container">
           <MapInteractionCSS maxScale={100} minScale={1}>
@@ -108,7 +108,6 @@ const Dashboard = () => {
             </div>
           </MapInteractionCSS>
           {/* <canvas id="image_canvas" /> */}
-          {/* <div className="image-delta" /> */}
         </div>
       </div>
     </Layout>
