@@ -1,4 +1,4 @@
-import * as tf from "@tensorflow/tfjs";
+// import * as tf from "@tensorflow/tfjs";
 import * as tmImage from "@teachablemachine/image";
 
 import { useEffect, useState } from "react";
@@ -15,7 +15,7 @@ const Analysis = () => {
 
   const predict = async () => {
     const predictions = await model.predict(
-      document.getElementById("image_canvas")
+      document.getElementById("main-image")
     );
     console.log(predictions);
   };

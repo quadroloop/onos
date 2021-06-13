@@ -1,3 +1,4 @@
+import html2canvas from "html2canvas";
 import moment from "moment";
 
 export const gotoRecords = () => {
@@ -69,4 +70,15 @@ export const ImageToCanvas = () => {
     ctx.fillStyle = ptrn;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   };
+};
+
+export const generateCanvas = () => {
+  let imageWrapper: any = document.querySelector(".main-image-wrapper");
+  let deltaContainer: any = document.querySelector(".image-delta");
+  setTimeout(() => {
+    html2canvas(imageWrapper).then(function (canvas) {
+      deltaContainer.innerHTML = "";
+      deltaContainer.appendChild(canvas);
+    });
+  }, 200);
 };

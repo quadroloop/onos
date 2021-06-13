@@ -5,7 +5,6 @@ import {
   gotoOverview,
   gotoRecords,
   gotoSettings,
-  ImageToCanvas,
   latest_colored,
   resetImage,
   setImageInfo,
@@ -29,7 +28,7 @@ const Dashboard = () => {
 
     setTimeout(() => {
       nprogress.done();
-    }, 10000);
+    }, 9000);
 
     async function delta() {
       const model = await tf.loadLayersModel("/neural_engine/model.json");
@@ -66,6 +65,10 @@ const Dashboard = () => {
     alert("failed to load image");
   };
 
+  useEffect(() => {
+    // fetch image data
+  }, []);
+
   return (
     <Layout>
       <div className="dashboard-page">
@@ -89,21 +92,23 @@ const Dashboard = () => {
 
         <div className="map-container">
           <MapInteractionCSS maxScale={100} minScale={1}>
-            <img
-              src={latest_colored}
-              id="main-image"
-              style={{
-                filter: filterStyle,
-              }}
-              onLoad={() => {
-                imageLoaded();
-                ImageToCanvas();
-              }}
-              onError={imageError}
-              // crossOrigin="anonymous"
-            />
+            <div className="main-image-wrapper">
+              <img
+                src={latest_colored}
+                id="main-image"
+                style={{
+                  filter: filterStyle,
+                }}
+                onLoad={() => {
+                  imageLoaded();
+                }}
+                onError={imageError}
+                // crossOrigin="anonymous"
+              />
+            </div>
           </MapInteractionCSS>
-          <canvas id="image_canvas" />
+          {/* <canvas id="image_canvas" /> */}
+          {/* <div className="image-delta" /> */}
         </div>
       </div>
     </Layout>
