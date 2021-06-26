@@ -20,7 +20,7 @@ async function downloadSatImage() {
 }
 
 export default async (req, res) => {
-  await downloadSatImage();
+  // await downloadSatImage();
   res.status(200).json({
     message: "Onos API v1",
     info: dataset_info,

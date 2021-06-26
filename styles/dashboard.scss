@@ -105,6 +105,9 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
   .info-nav {
     background: $sidebar-header-color;
     padding: 0px 20px 8px;
+    position: sticky;
+    top: 0px;
+    z-index: 900;
 
     span {
       font-size: 11px;

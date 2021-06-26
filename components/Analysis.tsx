@@ -35,7 +35,10 @@ const Analysis = () => {
         <span className="item-header">
           <i className="la la-dice-d20" /> ANALYSIS | ML Prediction
         </span>
-        <img src="/current.gif" id="current-delta-img" />
+        <img
+          src="http://localhost:3000/dataset/cl-fd9e8d9c-96bb-4739-bb64-597aa24920ce-2021-06-08-07:40:06.521203.gif"
+          id="current-delta-img"
+        />
 
         <div className="main-predictions">
           <div className="result top-result">
@@ -74,7 +77,7 @@ const Analysis = () => {
             <span>TYPHOON (42%)</span>
           </div>
         </div>
-        <button onClick={predict}>Predict</button>
+        {/* <button onClick={predict}>Predict</button> */}
       </div>
     </>
   );
