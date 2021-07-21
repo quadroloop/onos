@@ -14,7 +14,6 @@ import Layout from "./layout";
 import nprogress from "nprogress";
 import ImageInfo from "./ImageInfo";
 import moment from "moment";
-import CurrentImageModes from "./CurrentImageModes";
 
 // testing tensorflow model
 import * as tf from "@tensorflow/tfjs";

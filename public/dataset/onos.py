@@ -1,5 +1,4 @@
 import sys
-import urllib.request
 import datetime
 import json
 import uuid
@@ -140,7 +139,6 @@ def purgeDataset():
 
 def fetchImage(url,file_name):
   print('Fetching latest image from: '+ url)
-  # urllib.request.urlretrieve(url, file_name)
 
   # replaced urlib with wget
   os.system("wget -O "+file_name+" "+url)

@@ -606,3 +606,10 @@ $brady-fun: linear-gradient(to right, #00c3ff, #ffff1c);
     }
   }
 }
+
+// main-image
+
+#main-image {
+  // display: none;
+  filter: contrast(130%) brightness(110%) hue-rotate(40deg);
+}
