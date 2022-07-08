@@ -18,7 +18,7 @@
     "gifsicle": "^5.2.0",
     "gray-matter": "^4.0.2",
     "html2canvas": "^1.0.0-rc.7",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.31",
     "next": "^10.0.0",
     "next-fonts": "^1.4.0",
